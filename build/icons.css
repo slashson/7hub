@@ -1,0 +1,60 @@
+.sec--icons .head {
+  left: 0;
+  width: 760px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+}
+.sec--icons .head--adv { top: 0; }
+.sec--icons .head--eq { top: 293px; }
+
+.sec--icons .col {
+  position: absolute;
+}
+.sec--icons .col .ic {
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.sec--icons .col .lbl {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--black);
+}
+
+/* Advantages row */
+.sec--icons .col-adv-a { left: 58px;  top: 131px; width: 111px; }
+.sec--icons .col-adv-a .ic { width: 52px; height: 52px; }
+.sec--icons .col-adv-a .lbl { top: 72px; }
+
+.sec--icons .col-adv-b { left: 313px; top: 131px; width: 80px; }
+.sec--icons .col-adv-b .ic { width: 67px; height: 67px; }
+.sec--icons .col-adv-b .lbl { top: 72px; }
+
+.sec--icons .col-adv-c { left: 503px; top: 131px; width: 135px; }
+.sec--icons .col-adv-c .ic { width: 75px; height: 54px; }
+.sec--icons .col-adv-c .lbl { top: 74px; }
+
+.sec--icons .col-adv-d { left: 720px; top: 131px; width: 90px; }
+.sec--icons .col-adv-d .ic { width: 58px; height: 58px; }
+.sec--icons .col-adv-d .lbl { top: 72px; }
+
+/* Equipment row */
+.sec--icons .col-eq-a { left: 72px;  top: 391px; width: 91px; }
+.sec--icons .col-eq-a .ic { width: 73px; height: 73px; }
+.sec--icons .col-eq-a .lbl { top: 80px; }
+
+.sec--icons .col-eq-b { left: 304px; top: 401px; width: 97px; }
+.sec--icons .col-eq-b .ic { width: 70px; height: 70px; }
+.sec--icons .col-eq-b .lbl { top: 70px; }
+
+.sec--icons .col-eq-c { left: 542px; top: 405px; width: 59px; }
+.sec--icons .col-eq-c .ic { width: 59px; height: 59px; }
+.sec--icons .col-eq-c .lbl { top: 66px; }
+
+.sec--icons .col-eq-d { left: 742px; top: 399px; width: 55px; }
+.sec--icons .col-eq-d .ic { width: 55px; height: 55px; }
+.sec--icons .col-eq-d .lbl { top: 72px; }

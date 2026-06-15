@@ -1,0 +1,38 @@
+.sec--footer .footer__contacts {
+  left: 0;
+  top: 19px;
+  width: 133px;
+  height: 128px;
+  color: var(--black);
+}
+.sec--footer .footer__docs {
+  left: 169px;
+  top: 19px;
+  width: 140px;
+  height: 128px;
+  color: var(--black);
+}
+.sec--footer .footer__heading {
+  color: var(--brown);
+}
+.sec--footer .footer__lines {
+  margin-top: 24px;   /* blank line (\n\n) between heading and contact lines */
+  line-height: 27px;
+}
+.sec--footer .footer__doc-lines {
+  margin-top: 24px;
+  line-height: 27px;
+  text-decoration: underline;
+}
+.sec--footer .footer__logo {
+  left: 445px;
+  top: 0;
+  width: 441px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.sec--footer .footer__logo-studios {
+  font-weight: 400;
+  color: var(--black);
+}

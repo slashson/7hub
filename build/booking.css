@@ -1,0 +1,59 @@
+.sec--booking .booking__title {
+  left: 67px;
+  top: 0;
+  width: 760px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+}
+
+.sec--booking .booking__band {
+  left: 0;
+  top: 96px;
+  width: 1024px;
+  height: 324px;
+  background: var(--charcoal);
+}
+
+.sec--booking .booking__lead {
+  left: 376px;
+  top: 152px;
+  width: 292px;
+  height: 23px;
+  color: var(--cream);
+}
+
+.sec--booking .booking__desc {
+  left: 349px;
+  top: 223px;
+  width: 346px;
+  height: 60px;
+  color: var(--cream);
+}
+
+.sec--booking .booking__btn {
+  left: 361px;
+  top: 317px;
+  width: 302px;
+  height: 61px;
+  background: var(--cream);
+  border-radius: 30.5px;
+  color: var(--charcoal);
+  text-decoration: none;
+  display: block;
+}
+
+.sec--booking .booking__btn-label {
+  left: 41px;
+  top: 21px;
+  width: 153px;
+  color: var(--charcoal);
+}
+
+.sec--booking .booking__btn-icon {
+  left: 234px;
+  top: 16px;
+  width: 30px;
+  height: 30px;
+}

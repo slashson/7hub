@@ -1,0 +1,33 @@
+.sec--maps .maps__title {
+  left: 0;
+  top: 0;
+  width: 445px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+}
+
+.sec--maps .maps__img {
+  left: 0;
+  top: 113px;
+  width: 445px;
+  height: 259px;
+  object-fit: cover;
+  display: block;
+}
+
+.sec--maps .maps__btn {
+  left: 0;
+  top: 400px;
+  width: 445px;
+  height: 61px;
+  background: var(--brown);
+  border-radius: 30.5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 138px;   /* Figma left-positions the label at x≈137.86, not centred */
+  color: var(--white);
+  text-decoration: none;
+}

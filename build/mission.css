@@ -1,0 +1,15 @@
+.sec--mission .mission-bubble {
+  left: 0;
+  top: 0;
+  width: 890px;
+  height: 146px;
+  display: block;
+}
+.sec--mission .mission-text {
+  left: 70px;
+  top: 30px;
+  width: 751px;
+  height: 89px;
+  color: var(--black);
+  z-index: 1;
+}

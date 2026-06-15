@@ -1,0 +1,80 @@
+/* ===== Hero section ===== */
+
+.sec--hero .hero-7 {
+  /* Playball 170px glyph overflows upward to ~y4; Figma clips it at the box
+     top (y45). Clip to [45,191] so the visible 7 matches the reference. */
+  left: 0; top: 45px; width: 122px; height: 146px;
+  color: var(--brown);
+  overflow: hidden;
+}
+
+.sec--hero .hero-head {
+  left: 122px; top: 40px; width: 323px; height: 129px;
+  color: var(--black);
+}
+/* Fixed-height block lines force a uniform 34px advance (Figma line-height);
+   the 32–36px glyphs overflow the line box visibly, as in the design. */
+.sec--hero .hero-head .hl { display: block; height: 34px; line-height: 34px; }
+.sec--hero .hl-32 { font-size: 32px; }
+.sec--hero .hl-36 { font-size: 36px; }
+
+.sec--hero .hero-lang {
+  /* Figma vertically-centres the 3-line block in its 71px box (textAlignVertical
+     CENTER); top:64 reproduces that (was 77, which read 13px too low). */
+  left: 865px; top: 64px; width: 28px; height: 71px;
+}
+.sec--hero .lang-ukr { font-weight: 700; color: var(--brown); }
+.sec--hero .lang-ru  { color: var(--black); }
+.sec--hero .lang-eng { color: var(--black); }
+
+.sec--hero .hero-sub {
+  left: 0; top: 233px; width: 710px; height: 59px;
+  color: var(--black);
+}
+
+.sec--hero .hero-divider {
+  left: 0; top: 191px; width: 890px; height: 1px;
+  background: var(--brown);
+}
+
+.sec--hero .hero-cta {
+  left: 288px; top: 315px; width: 302px; height: 61px;
+  background: var(--brown);
+  border-radius: 30.5px;
+  color: var(--white);
+}
+.sec--hero .cta-label {
+  left: 35px; top: 21px; width: 192px;
+  color: var(--white);
+}
+.sec--hero .cta-icon {
+  left: 243px; top: 16px; width: 30px; height: 30px;
+}
+
+.sec--hero .hero-badge {
+  left: 600px; top: 0; width: 149px; height: 179px;
+}
+.sec--hero .badge-bg {
+  left: 0; top: 0; width: 149px; height: 179px;
+  object-fit: cover;
+}
+.sec--hero .badge-week {
+  left: 25px; top: 40px; width: 100px; height: 36px;
+  color: var(--cream);
+}
+.sec--hero .badge-price {
+  left: 22px; top: 80px; width: 110px; height: 24px;
+  color: var(--white);
+}
+.sec--hero .badge-uah {
+  left: 101px; top: 104px; width: 24px; height: 20px;
+  color: var(--cream);
+}
+.sec--hero .badge-vector {
+  left: 15px; top: 139px; width: 12px; height: 12px;
+  object-fit: cover;
+}
+.sec--hero .badge-incl {
+  left: 33px; top: 135px; width: 105px; height: 21px;
+  color: var(--white);
+}

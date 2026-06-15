@@ -1,0 +1,34 @@
+.sec--main .m-label { left:0; top:0; width:202px; height:20px; color:var(--black); }
+
+/* 360 card A */
+.sec--main .m-card-a { left:0; top:32px; width:438px; height:480px; }
+/* 360 card B */
+.sec--main .m-card-b { left:452px; top:32px; width:439px; height:480px; }
+
+.sec--main .m-card .m-tour { position:absolute; left:0; top:0; width:100%; height:480px; object-fit:cover; display:block; }
+.sec--main .m-card .m-box { position:absolute; top:26px; width:118px; height:104px; background:transparent; border:1px solid var(--black); border-radius:12px; }
+.sec--main .m-card .m-360 { position:absolute; top:35px; width:66px; height:66px; object-fit:cover; display:block; }
+.sec--main .m-card .m-360-label { position:absolute; top:96px; width:93px; height:20px; color:var(--black); }
+
+.sec--main .m-card-a .m-box { left:26px; }
+.sec--main .m-card-a .m-360 { left:50px; }
+.sec--main .m-card-a .m-360-label { left:38px; }
+
+.sec--main .m-card-b .m-box { left:19px; }
+.sec--main .m-card-b .m-360 { left:43px; }
+.sec--main .m-card-b .m-360-label { left:31px; }
+
+/* Gallery */
+.sec--main .m-gallery { left:0; top:544px; width:890px; height:322px; }
+.sec--main .m-gallery .g { position:absolute; object-fit:cover; display:block; }
+.sec--main .m-gallery .g1 { left:0; top:0; width:438px; height:287px; }
+.sec--main .m-gallery .g2 { left:452.35px; top:0; width:141px; height:89px; }
+.sec--main .m-gallery .g3 { left:452.35px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .g4 { left:600.35px; top:0; width:142px; height:89px; }
+.sec--main .m-gallery .g5 { left:600.35px; top:98px; width:142px; height:89px; }
+.sec--main .m-gallery .g6 { left:749.35px; top:0; width:141px; height:89px; }
+.sec--main .m-gallery .g7 { left:749.35px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .m-gallery-label { position:absolute; left:0; top:302px; width:102px; height:20px; color:var(--black); }
+
+/* Bold caption */
+.sec--main .m-caption { left:452px; top:796px; width:304px; height:35px; color:var(--black); }
