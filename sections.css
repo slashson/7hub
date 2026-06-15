@@ -302,18 +302,15 @@
   color: var(--brown);
 }
 
-.sec--rules .rules__num {
-  left: 0; width: 37px; height: 19px;
-  color: var(--brown);
+/* Rules as flex rows: number + paragraph. Numbers stay aligned with their
+   paragraphs in every language, regardless of how the text wraps. */
+.sec--rules .rules__list {
+  left: 0; top: 143px; width: 347px;
+  display: flex; flex-direction: column; gap: 21px;
 }
-/* One flowing text block (matches the single Figma text element); blank lines
-   come from <br><br>. Numbers 01–05 then line up with each item, centred on
-   the multi-line ones (04, 05), as in the reference. */
-.sec--rules .rules__text {
-  left: 37px; top: 145px; width: 310px;
-  line-height: 20px;
-  color: var(--black);
-}
+.sec--rules .rules__item { display: flex; align-items: baseline; }
+.sec--rules .rules__num  { width: 37px; flex: none; color: var(--brown); }
+.sec--rules .rules__p    { flex: 1; margin: 0; color: var(--black); }
 
 /* IN block */
 .sec--rules .rules__in-label {

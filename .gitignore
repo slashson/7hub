@@ -9,3 +9,6 @@ package-lock.json
 assets/ref/_*.png
 assets/ref/render-*.png
 assets/ref/ref-*.png
+
+# raw 360 source (work in progress — not yet wired up)
+*.mp4
