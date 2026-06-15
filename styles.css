@@ -112,6 +112,30 @@ body { background: var(--cream); font-family: var(--sans); color: var(--black); 
 /* Booking button face is cream → use the dark paper-plane. */
 .sec--booking .icon-tg { background-image: url('assets/icons/telegram.svg'); }
 
+/* ---- Hover/active feedback on the in-page CTA buttons ---- */
+.sec--hero .hero-cta,
+.sec--steps .steps__cta,
+.sec--maps .maps__btn,
+.sec--booking .booking__btn {
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, filter .15s ease;
+}
+.sec--hero .hero-cta:hover,
+.sec--steps .steps__cta:hover,
+.sec--maps .maps__btn:hover {
+  background-color: #6b4124;                       /* darker brown */
+  box-shadow: 0 8px 22px rgba(86, 73, 73, .30);
+  transform: translateY(-2px);
+}
+.sec--booking .booking__btn:hover {
+  filter: brightness(.93);                         /* darken the cream face */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .20);
+  transform: translateY(-2px);
+}
+.sec--hero .hero-cta:active,
+.sec--steps .steps__cta:active,
+.sec--maps .maps__btn:active,
+.sec--booking .booking__btn:active { transform: translateY(0); }
+
 /* ---- Sticky floating CTA (fixed to the viewport bottom-right) ---- */
 .fab {
   position: fixed;

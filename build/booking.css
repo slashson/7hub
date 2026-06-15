@@ -41,19 +41,8 @@
   border-radius: 30.5px;
   color: var(--charcoal);
   text-decoration: none;
-  display: block;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
 
-.sec--booking .booking__btn-label {
-  left: 41px;
-  top: 21px;
-  width: 153px;
-  color: var(--charcoal);
-}
-
-.sec--booking .booking__btn-icon {
-  left: 234px;
-  top: 16px;
-  width: 30px;
-  height: 30px;
-}
+.sec--booking .booking__btn-label { color: var(--charcoal); white-space: nowrap; }
+.sec--booking .booking__btn-icon  { width: 30px; height: 30px; flex: none; }

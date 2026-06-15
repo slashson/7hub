@@ -30,4 +30,5 @@
   padding-left: 138px;   /* Figma left-positions the label at x≈137.86, not centred */
   color: var(--white);
   text-decoration: none;
+  white-space: nowrap;
 }

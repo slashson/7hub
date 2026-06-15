@@ -44,12 +44,7 @@
   background: var(--brown);
   border-radius: 30.5px;
   color: var(--white);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
-.sec--steps .steps__cta-label {
-  position: absolute;
-  left: 35px; top: 21px; width: 192px;
-}
-.sec--steps .steps__cta-icon {
-  position: absolute;
-  left: 243px; top: 16px; width: 30px; height: 30px;
-}
+.sec--steps .steps__cta-label { white-space: nowrap; }
+.sec--steps .steps__cta-icon  { width: 30px; height: 30px; flex: none; }

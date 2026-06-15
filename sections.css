@@ -26,9 +26,18 @@
      CENTER); top:64 reproduces that (was 77, which read 13px too low). */
   left: 865px; top: 64px; width: 28px; height: 71px;
 }
-.sec--hero .lang-ukr { font-weight: 700; color: var(--brown); }
-.sec--hero .lang-ru  { color: var(--black); }
-.sec--hero .lang-eng { color: var(--black); }
+.sec--hero .lang-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  line-height: 33px;          /* matches .ty-lang so positions are unchanged */
+  color: var(--black);
+  cursor: pointer;
+  transition: color .15s ease, opacity .15s ease;
+}
+.sec--hero .lang-btn:hover    { color: var(--brown); opacity: .85; }
+.sec--hero .lang-btn.is-active { font-weight: 700; color: var(--brown); cursor: default; }
 
 .sec--hero .hero-sub {
   left: 0; top: 233px; width: 710px; height: 59px;
@@ -45,14 +54,11 @@
   background: var(--brown);
   border-radius: 30.5px;
   color: var(--white);
+  /* flex so any language fits on one line (RU/EN labels are longer) */
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
-.sec--hero .cta-label {
-  left: 35px; top: 21px; width: 192px;
-  color: var(--white);
-}
-.sec--hero .cta-icon {
-  left: 243px; top: 16px; width: 30px; height: 30px;
-}
+.sec--hero .cta-label { color: var(--white); white-space: nowrap; }
+.sec--hero .cta-icon  { width: 30px; height: 30px; flex: none; }
 
 .sec--hero .hero-badge {
   left: 600px; top: 0; width: 149px; height: 179px;
@@ -182,15 +188,10 @@
   background: var(--brown);
   border-radius: 30.5px;
   color: var(--white);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
-.sec--steps .steps__cta-label {
-  position: absolute;
-  left: 35px; top: 21px; width: 192px;
-}
-.sec--steps .steps__cta-icon {
-  position: absolute;
-  left: 243px; top: 16px; width: 30px; height: 30px;
-}
+.sec--steps .steps__cta-label { white-space: nowrap; }
+.sec--steps .steps__cta-icon  { width: 30px; height: 30px; flex: none; }
 
 /* ===================== icons ===================== */
 .sec--icons .head {
@@ -287,6 +288,7 @@
   padding-left: 138px;   /* Figma left-positions the label at x≈137.86, not centred */
   color: var(--white);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 /* ===================== rules ===================== */
@@ -317,6 +319,7 @@
 .sec--rules .rules__in-label {
   left: 71px; top: 414px; width: 56px;
   color: var(--black);
+  white-space: nowrap;
 }
 .sec--rules .rules__in-clock {
   left: 50px; top: 419px; width: 10px; height: 10px;
@@ -331,6 +334,7 @@
 .sec--rules .rules__out-label {
   left: 224px; top: 414px; width: 63px;
   color: var(--black);
+  white-space: nowrap;
 }
 .sec--rules .rules__out-clock {
   left: 207px; top: 419px; width: 10px; height: 10px;
@@ -385,22 +389,11 @@
   border-radius: 30.5px;
   color: var(--charcoal);
   text-decoration: none;
-  display: block;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
 
-.sec--booking .booking__btn-label {
-  left: 41px;
-  top: 21px;
-  width: 153px;
-  color: var(--charcoal);
-}
-
-.sec--booking .booking__btn-icon {
-  left: 234px;
-  top: 16px;
-  width: 30px;
-  height: 30px;
-}
+.sec--booking .booking__btn-label { color: var(--charcoal); white-space: nowrap; }
+.sec--booking .booking__btn-icon  { width: 30px; height: 30px; flex: none; }
 
 /* ===================== footer ===================== */
 .sec--footer .footer__contacts {
@@ -442,7 +435,5 @@
   color: var(--black);
 }
 
-/* assembly fixes — absolutely position nested button/badge children */
-.sec--hero .hero-cta > *,
-.sec--hero .hero-badge > *,
-.sec--booking .booking__btn > * { position: absolute; }
+/* assembly fix — absolutely position nested price-badge children */
+.sec--hero .hero-badge > * { position: absolute; }

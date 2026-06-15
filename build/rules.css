@@ -25,6 +25,7 @@
 .sec--rules .rules__in-label {
   left: 71px; top: 414px; width: 56px;
   color: var(--black);
+  white-space: nowrap;
 }
 .sec--rules .rules__in-clock {
   left: 50px; top: 419px; width: 10px; height: 10px;
@@ -39,6 +40,7 @@
 .sec--rules .rules__out-label {
   left: 224px; top: 414px; width: 63px;
   color: var(--black);
+  white-space: nowrap;
 }
 .sec--rules .rules__out-clock {
   left: 207px; top: 419px; width: 10px; height: 10px;
