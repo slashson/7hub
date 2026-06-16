@@ -21,25 +21,37 @@
   background: var(--charcoal);
 }
 
+/* Content now lives inside the band; this inner box maps back to the 1024px
+   canvas area (centred in the full-bleed band) so the absolute coords below
+   stay in canvas space. tops are band-relative (= section top − 96). */
+.sec--booking .booking__inner {
+  position: absolute;
+  left: 4000px; top: 0;
+  width: 1024px; height: 324px;
+}
+
 .sec--booking .booking__lead {
+  position: absolute;
   left: 376px;
-  top: 152px;
+  top: 56px;
   width: 292px;
   height: 23px;
   color: var(--cream);
 }
 
 .sec--booking .booking__desc {
+  position: absolute;
   left: 349px;
-  top: 223px;
+  top: 127px;
   width: 346px;
   height: 60px;
   color: var(--cream);
 }
 
 .sec--booking .booking__btn {
+  position: absolute;
   left: 361px;
-  top: 317px;
+  top: 221px;
   width: 302px;
   height: 61px;
   background: var(--cream);

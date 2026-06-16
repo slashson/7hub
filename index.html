@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sections.css">
+  <link rel="stylesheet" href="mobile.css">
   <script src="i18n.js" defer></script>
   <script src="gallery.js" defer></script>
   <script src="assets/img/pano-data.js" defer></script>
@@ -195,24 +196,30 @@
           <div class="rules__item"><span class="ty-rulenum rules__num">05</span><p class="ty-body rules__p" data-rule="5">Перед виїздом — фото показників лічильника надсилається в бот.</p></div>
         </div>
 
-        <span class="ty-body rules__in-label">Заїзд —</span>
-        <img class="rules__in-clock" src="assets/icons/clock.svg" alt="">
-        <p class="ty-body rules__in-line">після <span class="em-32">14:00</span></p>
-
-        <span class="ty-body rules__out-label">Виїзд —</span>
-        <img class="rules__out-clock" src="assets/icons/clock.svg" alt="">
-        <p class="ty-body rules__out-line">до <span class="em-32">12:00</span></p>
+        <div class="rules__times">
+          <div class="rules__t">
+            <span class="rules__t-head"><img class="rules__clock" src="assets/icons/clock.svg" alt=""><span class="ty-body rules__in-label">Заїзд —</span></span>
+            <p class="ty-body rules__in-line">після <span class="em-32">14:00</span></p>
+          </div>
+          <div class="rules__t">
+            <span class="rules__t-head"><img class="rules__clock" src="assets/icons/clock.svg" alt=""><span class="ty-body rules__out-label">Виїзд —</span></span>
+            <p class="ty-body rules__out-line">до <span class="em-32">12:00</span></p>
+          </div>
+        </div>
       </section>
 
       <section class="sec sec--booking">
         <h2 class="ty-h2 booking__title">Бронювання житла</h2>
-        <div class="booking__band"></div>
-        <p class="ty-lead booking__lead">Бронюйте в пару дотиків</p>
-        <p class="ty-body booking__desc">Вибір дат, оплата та підтвердження — усередині Telegram-бота. Заїзд після 14:00, виїзд до 12:00.</p>
-        <a href="https://t.me/boris8242" class="booking__btn">
-          <span class="ty-btn booking__btn-label">Перейти в Telegram</span>
-          <span class="icon-tg booking__btn-icon"></span>
-        </a>
+        <div class="booking__band">
+          <div class="booking__inner">
+            <p class="ty-lead booking__lead">Бронюйте в пару дотиків</p>
+            <p class="ty-body booking__desc">Вибір дат, оплата та підтвердження — усередині Telegram-бота. Заїзд після 14:00, виїзд до 12:00.</p>
+            <a href="https://t.me/boris8242" class="booking__btn">
+              <span class="ty-btn booking__btn-label">Перейти в Telegram</span>
+              <span class="icon-tg booking__btn-icon"></span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="sec sec--footer">
@@ -241,11 +248,18 @@
     // Scale the fixed 1024px canvas to fit the viewport, keeping the
     // Figma layout pixel-faithful at every width.
     (function () {
-      var CW = 1024, CH = 3789;
+      var CW = 1024, CH = 3789, MOBILE = 768;
       var stage = document.getElementById('stage');
       var canvas = document.getElementById('canvas');
       function fit() {
         var w = stage.clientWidth;
+        if (w < MOBILE) {
+          // Phones: drop the fixed-canvas scaling and let mobile.css reflow
+          // the sections into a readable single column.
+          canvas.style.transform = 'none';
+          stage.style.height = 'auto';
+          return;
+        }
         var scale = Math.min(1, w / CW);
         var offsetX = w > CW ? Math.round((w - CW) / 2) : 0;
         canvas.style.transform = 'translateX(' + offsetX + 'px) scale(' + scale + ')';

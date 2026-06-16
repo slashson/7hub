@@ -1,0 +1,130 @@
+/* ============================================================
+   Mobile layout (≤767px). The desktop is a fixed 1024px absolutely-
+   positioned canvas; here we drop the scaling (see the guard in index.html)
+   and reflow every section into a readable single column.
+   Loaded AFTER sections.css so these rules win.
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* ---- Canvas → flowing column ---- */
+  .stage  { height: auto !important; overflow: visible; }
+  .canvas { position: static; width: 100%; height: auto; transform: none !important; overflow: hidden; }
+
+  .sec {
+    position: static !important;
+    left: auto !important; top: auto !important;
+    width: auto !important; height: auto !important;
+    padding: 30px 20px;
+  }
+  .sec > * { position: static; inset: auto; }   /* drop desktop left/top too; clusters re-styled below */
+
+  /* ===================== HERO ===================== */
+  .sec--hero {
+    position: relative;
+    display: flex; flex-direction: column; align-items: flex-start;
+    padding-top: 22px;
+  }
+  .sec--hero .hero-lang {
+    position: absolute; left: auto; top: 22px; right: 20px;   /* clear desktop left:865 */
+    width: auto; height: auto; display: flex; gap: 14px;
+  }
+  .sec--hero .lang-btn { display: inline-block; line-height: 1; }
+  .sec--hero .hero-7 {
+    order: 1; width: auto; height: auto; overflow: visible;
+    line-height: .78; font-size: 96px; margin: 0 0 2px -4px;
+  }
+  .sec--hero .hero-head { order: 2; width: auto; }
+  .sec--hero .hero-head .hl { height: auto; line-height: 1.12; }
+  .sec--hero .hl-32 { font-size: 26px; }
+  .sec--hero .hl-36 { font-size: 27px; }
+  .sec--hero .hero-divider { display: none; }
+  .sec--hero .hero-badge { order: 3; position: relative; left: auto; top: auto; width: 149px; height: 179px; margin: 22px 0 4px; align-self: center; }
+  .sec--hero .hero-sub { order: 4; width: auto; margin-top: 16px; }
+  .sec--hero .hero-sub .em-32 { font-size: 22px; line-height: 1.2; }
+  .sec--hero .hero-cta { order: 5; width: 100%; max-width: 360px; align-self: center; margin-top: 20px; }
+
+  /* ===================== MAIN (360 + gallery) ===================== */
+  .sec--main { display: flex; flex-direction: column; gap: 14px; }
+  .sec--main .m-label { width: auto; height: auto; font-weight: 700; }
+  .sec--main .m-card {
+    position: relative !important; left: auto !important; top: auto !important;
+    width: 100% !important; height: auto !important;
+    aspect-ratio: 438 / 420; margin: 0;
+  }
+  .sec--main .m-gallery {
+    position: static !important; width: auto !important; height: auto !important;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .sec--main .m-gallery .g { position: static !important; }
+  .sec--main .m-gallery .g1 { order: 1; width: 100% !important; height: auto !important; aspect-ratio: 438 / 287; }
+  .sec--main .m-gallery .m-gallery-label { position: static !important; order: 2; width: 100% !important; height: auto; }
+  .sec--main .m-gallery .g-thumb { order: 3; width: calc((100% - 16px) / 3) !important; height: auto !important; aspect-ratio: 141 / 89; }
+  .sec--main .m-caption { width: auto !important; height: auto !important; }
+
+  /* ===================== MISSION ===================== */
+  .sec--mission .mission-bubble { display: none; }
+  .sec--mission .mission-text {
+    width: auto !important; height: auto !important;
+    border: 2px solid var(--brown); border-radius: 16px; background: var(--white);
+    padding: 18px 20px; font-size: 18px; line-height: 1.4;
+  }
+
+  /* ===================== STEPS ===================== */
+  .sec--steps { display: flex; flex-direction: column; }
+  .sec--steps .steps__title { width: auto !important; height: auto !important; font-size: 24px; line-height: 1.2; margin-bottom: 20px; }
+  .sec--steps .steps__arrow { display: none; }
+  .sec--steps .steps__col { width: auto !important; display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .sec--steps .steps__circle { position: static !important; transform: none !important; margin: 0; flex: none; }
+  .sec--steps .steps__label { position: static !important; width: auto !important; text-align: left; }
+  .sec--steps .steps__cta { width: 100% !important; max-width: 360px; align-self: center; margin-top: 12px; }
+
+  /* ===================== ICONS (advantages / equipment) ===================== */
+  .sec--icons { display: flex; flex-wrap: wrap; gap: 22px 10px; }
+  .sec--icons .head { flex: 0 0 100%; display: block; width: auto !important; height: auto !important; font-size: 26px; margin-top: 4px; }
+  .sec--icons .col {
+    position: static !important; width: auto !important; flex: 0 0 calc(50% - 5px);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .sec--icons .col .ic { margin: 0 auto 8px; }
+  .sec--icons .col .lbl { position: static !important; width: 100% !important; }
+
+  /* ===================== MAPS ===================== */
+  .sec--maps { display: flex; flex-direction: column; gap: 14px; }
+  .sec--maps .maps__title { width: auto !important; height: auto !important; }
+  .sec--maps .maps__img { width: 100% !important; height: auto !important; aspect-ratio: 445 / 259; }
+  .sec--maps .maps__btn { width: 100% !important; height: 54px; padding-left: 0; justify-content: center; }
+
+  /* ===================== RULES ===================== */
+  .sec--rules { display: flex; flex-direction: column; gap: 16px; }
+  .sec--rules .rules__title { width: auto !important; height: auto !important; }
+  .sec--rules .rules__subtitle { width: auto !important; height: auto !important; margin-top: -6px; }
+  .sec--rules .rules__list { position: static !important; width: auto !important; height: auto !important; }
+  .sec--rules .rules__times { position: static !important; width: auto !important; height: auto !important; gap: 40px; margin-top: 4px; }
+
+  /* ===================== BOOKING ===================== */
+  .sec--booking { padding: 0; }
+  .sec--booking .booking__title { width: auto !important; height: auto !important; padding: 30px 20px 0; }
+  .sec--booking .booking__band {
+    position: static !important; left: auto !important; top: auto !important;
+    width: auto !important; height: auto !important;
+    margin-top: 18px; padding: 30px 20px;
+  }
+  .sec--booking .booking__inner {
+    position: static !important; left: auto !important; top: auto !important;
+    width: auto !important; height: auto !important;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+  }
+  .sec--booking .booking__lead { position: static !important; width: auto !important; height: auto !important; }
+  .sec--booking .booking__desc { position: static !important; width: auto !important; height: auto !important; }
+  .sec--booking .booking__btn  { position: static !important; width: 100% !important; max-width: 320px; height: 56px; }
+
+  /* ===================== FOOTER ===================== */
+  .sec--footer {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 22px;
+    padding: 30px 20px 96px;   /* bottom space so the fixed FAB doesn't cover it */
+  }
+  .sec--footer .footer__contacts,
+  .sec--footer .footer__docs,
+  .sec--footer .footer__logo { width: auto !important; height: auto !important; }
+  .sec--footer .footer__logo { font-size: 52px; }
+}

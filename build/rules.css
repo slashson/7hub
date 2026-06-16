@@ -18,32 +18,15 @@
 .sec--rules .rules__num  { width: 37px; flex: none; color: var(--brown); }
 .sec--rules .rules__p    { flex: 1; margin: 0; color: var(--black); }
 
-/* IN block */
-.sec--rules .rules__in-label {
-  left: 71px; top: 414px; width: 56px;
-  color: var(--black);
-  white-space: nowrap;
+/* Check-in / check-out times — flex blocks (clock + label, then big time). */
+.sec--rules .rules__times {
+  left: 3px; top: 414px; width: 344px;
+  display: flex; gap: 40px;
 }
-.sec--rules .rules__in-clock {
-  left: 50px; top: 419px; width: 10px; height: 10px;
-  object-fit: cover; display: block;
-}
-.sec--rules .rules__in-line {
-  left: 3px; top: 440px; width: 129px;
-  color: var(--black);
-}
-
-/* OUT block */
-.sec--rules .rules__out-label {
-  left: 224px; top: 414px; width: 63px;
-  color: var(--black);
-  white-space: nowrap;
-}
-.sec--rules .rules__out-clock {
-  left: 207px; top: 419px; width: 10px; height: 10px;
-  object-fit: cover; display: block;
-}
-.sec--rules .rules__out-line {
-  left: 183px; top: 438px; width: 104px;
-  color: var(--black);
-}
+.sec--rules .rules__t { display: flex; flex-direction: column; }
+.sec--rules .rules__t-head { display: flex; align-items: center; gap: 8px; }
+.sec--rules .rules__clock { width: 10px; height: 10px; display: block; flex: none; }
+.sec--rules .rules__in-label,
+.sec--rules .rules__out-label { color: var(--black); white-space: nowrap; }
+.sec--rules .rules__in-line,
+.sec--rules .rules__out-line { margin: 0; color: var(--black); white-space: nowrap; }
