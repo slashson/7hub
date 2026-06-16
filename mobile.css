@@ -38,15 +38,18 @@
     width: auto; height: auto; display: flex; gap: 6px;
   }
   .sec--hero .lang-btn { display: inline-flex; align-items: center; line-height: 1; padding: 13px 7px; }
+  /* Heading order on mobile: "Мережа квартир / одного стандарту" (sans) on top,
+     then the big "7", then "приміщень / за одною адресою." (italic). The heading
+     lines flow into the hero column (display:contents) so the "7" can sit
+     between them via flex order. Widths clear the top-right price badge. */
   .sec--hero .hero-7 {
-    order: 1; width: auto; height: auto; overflow: visible;
-    line-height: .78; font-size: 96px; margin: 0 0 2px -4px;
+    order: 2; width: auto; height: auto; overflow: visible;
+    line-height: .78; font-size: 90px; margin: 6px 0 10px -4px;
   }
-  /* Heading on the left, constrained so it clears the top-right price badge. */
-  .sec--hero .hero-head { order: 2; width: calc(100% - 142px); height: auto !important; }
-  .sec--hero .hero-head .hl { height: auto; line-height: 1.12; }
-  .sec--hero .hl-32 { font-size: 25px; }
-  .sec--hero .hl-36 { font-size: 28px; }      /* keep the italic accent clearly larger */
+  .sec--hero .hero-head { display: contents; }
+  .sec--hero .hero-head .hl { height: auto !important; line-height: 1.12; }
+  .sec--hero .hl-32 { order: 1; width: calc(100% - 142px); font-size: 25px; }
+  .sec--hero .hl-36 { order: 3; width: calc(100% - 142px); font-size: 28px; }   /* italic accent, below the 7 */
   .sec--hero .hero-divider { display: none; }
   /* Price badge pinned top-right (mirrors its right-side desktop placement),
      scaled to fit beside the heading. */
