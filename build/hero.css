@@ -2,8 +2,12 @@
 
 .sec--hero .hero-7 {
   /* Playball 170px glyph overflows upward to ~y4; Figma clips it at the box
-     top (y45). Clip to [45,191] so the visible 7 matches the reference. */
+     top (y45). Clip to [45,191] so the visible 7 matches the reference.
+     line-height drops the baseline into the clip box: at the .ty-script
+     value (50px) the glyph rides up and only its top hook shows; 140px seats
+     the full 7 inside [45,191] as in the design. */
   left: 0; top: 45px; width: 122px; height: 146px;
+  line-height: 140px;
   color: var(--brown);
   overflow: hidden;
 }

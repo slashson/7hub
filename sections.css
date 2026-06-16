@@ -5,8 +5,12 @@
 
 .sec--hero .hero-7 {
   /* Playball 170px glyph overflows upward to ~y4; Figma clips it at the box
-     top (y45). Clip to [45,191] so the visible 7 matches the reference. */
+     top (y45). Clip to [45,191] so the visible 7 matches the reference.
+     line-height drops the baseline into the clip box: at the .ty-script
+     value (50px) the glyph rides up and only its top hook shows; 140px seats
+     the full 7 inside [45,191] as in the design. */
   left: 0; top: 45px; width: 122px; height: 146px;
+  line-height: 140px;
   color: var(--brown);
   overflow: hidden;
 }
@@ -89,7 +93,9 @@
 }
 
 /* ===================== main ===================== */
-.sec--main .m-label { left:0; top:0; width:202px; height:20px; color:var(--black); }
+/* width fits the longest translation on one line (RU "Полный обзор квартиры 360°"
+   needs ~209px; UK/EN ~202px) — keeps "360°" from wrapping to a 2nd line. */
+.sec--main .m-label { left:0; top:0; width:220px; height:20px; color:var(--black); }
 
 /* 360 card A */
 .sec--main .m-card-a { left:0; top:32px; width:438px; height:480px; }
@@ -112,17 +118,23 @@
 /* Gallery */
 .sec--main .m-gallery { left:0; top:544px; width:890px; height:322px; }
 .sec--main .m-gallery .g { position:absolute; object-fit:cover; display:block; }
-.sec--main .m-gallery .g1 { left:0; top:0; width:438px; height:287px; }
+.sec--main .m-gallery .g1 { left:0; top:0; width:438px; height:287px; transition:opacity .18s ease; }
+
+/* Clickable thumbnails: hover/focus affordance + active outline */
+.sec--main .m-gallery .g-thumb { cursor:pointer; transition:filter .15s ease, opacity .15s ease, box-shadow .15s ease; }
+.sec--main .m-gallery .g-thumb:hover { filter:brightness(1.07); opacity:.9; }
+.sec--main .m-gallery .g-thumb:focus-visible { outline:none; box-shadow:0 0 0 2px var(--black); }
 .sec--main .m-gallery .g2 { left:452.35px; top:0; width:141px; height:89px; }
 .sec--main .m-gallery .g3 { left:452.35px; top:98px; width:141px; height:89px; }
 .sec--main .m-gallery .g4 { left:600.35px; top:0; width:142px; height:89px; }
 .sec--main .m-gallery .g5 { left:600.35px; top:98px; width:142px; height:89px; }
 .sec--main .m-gallery .g6 { left:749.35px; top:0; width:141px; height:89px; }
 .sec--main .m-gallery .g7 { left:749.35px; top:98px; width:141px; height:89px; }
-.sec--main .m-gallery .m-gallery-label { position:absolute; left:0; top:302px; width:102px; height:20px; color:var(--black); }
+.sec--main .m-gallery .m-gallery-label { position:absolute; left:0; top:302px; width:auto; height:20px; white-space:nowrap; color:var(--black); }
 
-/* Bold caption */
-.sec--main .m-caption { left:452px; top:796px; width:304px; height:35px; color:var(--black); }
+/* Bold caption — two <br>-separated lines. Width fits the longest line of any
+   translation on one row (RU 2nd line ~335px) so the copy stays 2 lines, not 4. */
+.sec--main .m-caption { left:452px; top:796px; width:344px; height:40px; color:var(--black); }
 
 /* ===================== mission ===================== */
 .sec--mission .mission-bubble {
@@ -132,11 +144,20 @@
   height: 146px;
   display: block;
 }
+/* Vertically centre the copy in the bubble body (0–118px; the tail spans
+   118–146px). flex centring keeps it centred for any line count / language. */
 .sec--mission .mission-text {
   left: 70px;
-  top: 30px;
+  top: 0;
   width: 751px;
-  height: 89px;
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Slightly smaller than ty-mission's 24/28 so the longest translation (RU)
+     fits in 2 lines instead of 3. */
+  font-size: 22px;
+  line-height: 26px;
   color: var(--black);
   z-index: 1;
 }

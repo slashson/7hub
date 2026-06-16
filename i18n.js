@@ -26,7 +26,8 @@
     // ---- Main / gallery ----
     { s: '.m-label', uk: 'Повний огляд квартири 360°', ru: 'Полный обзор квартиры 360°', en: 'Full 360° apartment tour' },
     { s: '.m-360-label', uk: 'Відкрити 360° тур', ru: 'Открыть 360° тур', en: 'Open 360° tour' },
-    { s: '.m-gallery-label', uk: 'Спальне місце', ru: 'Спальное место', en: 'Sleeping area' },
+    // NB: .m-gallery-label is driven by gallery.js (the caption follows the
+    // open photo), so it is intentionally NOT keyed here.
     { s: '.m-caption', h: true,
       uk: 'Усі квартири відповідають фотографіям<br>та доступні для самостійного заселення.',
       ru: 'Все квартиры соответствуют фотографиям<br>и доступны для самостоятельного заселения.',
@@ -123,6 +124,8 @@
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
     try { localStorage.setItem('lang', lang); } catch (e2) {}
+    // Let other modules (e.g. gallery.js) re-render language-dependent state.
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
   }
 
   function init() {
