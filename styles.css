@@ -42,7 +42,9 @@ body { background: var(--cream); font-family: var(--sans); color: var(--black); 
   height: var(--canvas-h);
   background: var(--cream);
   transform-origin: top left;
-  overflow: hidden;
+  /* visible (not hidden) so the booking band can full-bleed past the 1024px
+     box; .stage's overflow:hidden still clips everything to the viewport. */
+  overflow: visible;
 }
 
 /* ---- Section base ----

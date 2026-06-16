@@ -9,9 +9,14 @@
 }
 
 .sec--booking .booking__band {
-  left: 0;
+  /* Full-bleed: break out of the 1024px canvas so the dark band spans the
+     whole viewport width (on screens wider than 1024px the centred canvas
+     would otherwise frame it with cream gaps). Extra-wide + centred on the
+     canvas; .stage (overflow:hidden, viewport-width) clips the excess, and
+     .canvas must be overflow:visible for the bleed to escape (see styles.css). */
+  left: -4000px;
   top: 96px;
-  width: 1024px;
+  width: 9024px;   /* 1024 + 2×4000 → centred on the canvas, covers ultrawide */
   height: 324px;
   background: var(--charcoal);
 }
