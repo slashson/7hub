@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="sections.css">
   <script src="i18n.js" defer></script>
   <script src="gallery.js" defer></script>
+  <script src="assets/img/pano-data.js" defer></script>
+  <script src="pano.js" defer></script>
 </head>
 <body>
   <div class="stage" id="stage">
@@ -61,14 +63,14 @@
         <span class="m-label ty-body">Повний огляд квартири 360°</span>
 
         <div class="m-card m-card-a">
-          <img class="m-tour" src="assets/img/tour-360-a-630e02.png" alt="">
+          <canvas class="m-pano" aria-label="360° панорама квартири"></canvas>
           <span class="m-box"></span>
           <img class="m-360" src="assets/icons/icon-360.svg" alt="">
           <span class="m-360-label ty-small">Відкрити 360° тур</span>
         </div>
 
         <div class="m-card m-card-b">
-          <img class="m-tour" src="assets/img/tour-360-b-38cb5a.png" alt="">
+          <canvas class="m-pano" aria-label="360° панорама квартири"></canvas>
           <span class="m-box"></span>
           <img class="m-360" src="assets/icons/icon-360.svg" alt="">
           <span class="m-360-label ty-small">Відкрити 360° тур</span>
