@@ -34,7 +34,7 @@
     padding-top: 22px;
   }
   .sec--hero .hero-lang {
-    position: absolute; left: auto; top: 14px; right: 18px;   /* clear desktop left:865 */
+    position: absolute; left: auto; top: 156px; right: 18px;   /* below the price badge */
     width: auto; height: auto; display: flex; gap: 6px;
   }
   .sec--hero .lang-btn { display: inline-flex; align-items: center; line-height: 1; padding: 13px 7px; }
@@ -42,13 +42,20 @@
     order: 1; width: auto; height: auto; overflow: visible;
     line-height: .78; font-size: 96px; margin: 0 0 2px -4px;
   }
-  .sec--hero .hero-head { order: 2; width: auto; }
+  /* Heading on the left, constrained so it clears the top-right price badge. */
+  .sec--hero .hero-head { order: 2; width: calc(100% - 142px); height: auto !important; }
   .sec--hero .hero-head .hl { height: auto; line-height: 1.12; }
-  .sec--hero .hl-32 { font-size: 26px; }
-  .sec--hero .hl-36 { font-size: 30px; }      /* keep the italic accent clearly larger */
+  .sec--hero .hl-32 { font-size: 25px; }
+  .sec--hero .hl-36 { font-size: 28px; }      /* keep the italic accent clearly larger */
   .sec--hero .hero-divider { display: none; }
-  .sec--hero .hero-badge { order: 3; position: relative; left: auto; top: auto; width: 149px; height: 179px; margin: 24px 0 6px; align-self: flex-start; }
-  .sec--hero .hero-sub { order: 4; width: auto; margin-top: 16px; }
+  /* Price badge pinned top-right (mirrors its right-side desktop placement),
+     scaled to fit beside the heading. */
+  .sec--hero .hero-badge {
+    position: absolute; top: 0; right: 14px; left: auto; bottom: auto;   /* touches the very top */
+    width: 149px; height: 179px; margin: 0;
+    transform: scale(0.8); transform-origin: top right;
+  }
+  .sec--hero .hero-sub { order: 4; width: auto; height: auto !important; margin-top: 24px; }
   .sec--hero .hero-sub .em-32 { font-size: 22px; line-height: 1.25; }
   .sec--hero .hero-cta { order: 5; width: 100%; align-self: stretch; margin-top: 22px; }
 
