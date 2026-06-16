@@ -268,6 +268,18 @@
       fit();
       window.addEventListener('resize', fit);
       window.addEventListener('load', fit);
+
+      // On phones the FAB is a full-width bottom bar; hide it near the top so it
+      // doesn't duplicate the hero CTA, reveal it once you scroll past the hero.
+      var fab = document.querySelector('.fab');
+      function fabPeek() {
+        if (!fab) return;
+        var hide = window.innerWidth < MOBILE && window.scrollY < 340;
+        fab.classList.toggle('fab--peek', hide);
+      }
+      fabPeek();
+      window.addEventListener('scroll', fabPeek, { passive: true });
+      window.addEventListener('resize', fabPeek);
     })();
   </script>
 </body>

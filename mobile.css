@@ -18,6 +18,15 @@
   }
   .sec > * { position: static; inset: auto; }   /* drop desktop left/top too; clusters re-styled below */
 
+  /* ---- One consistent section-heading scale across the whole page ---- */
+  .sec--steps .steps__title,
+  .sec--icons .head,
+  .sec--maps  .maps__title,
+  .sec--rules .rules__title,
+  .sec--booking .booking__title {
+    font-size: 26px; line-height: 1.15; height: auto !important;
+  }
+
   /* ===================== HERO ===================== */
   .sec--hero {
     position: relative;
@@ -25,10 +34,10 @@
     padding-top: 22px;
   }
   .sec--hero .hero-lang {
-    position: absolute; left: auto; top: 22px; right: 20px;   /* clear desktop left:865 */
-    width: auto; height: auto; display: flex; gap: 14px;
+    position: absolute; left: auto; top: 14px; right: 18px;   /* clear desktop left:865 */
+    width: auto; height: auto; display: flex; gap: 6px;
   }
-  .sec--hero .lang-btn { display: inline-block; line-height: 1; }
+  .sec--hero .lang-btn { display: inline-flex; align-items: center; line-height: 1; padding: 13px 7px; }
   .sec--hero .hero-7 {
     order: 1; width: auto; height: auto; overflow: visible;
     line-height: .78; font-size: 96px; margin: 0 0 2px -4px;
@@ -36,21 +45,25 @@
   .sec--hero .hero-head { order: 2; width: auto; }
   .sec--hero .hero-head .hl { height: auto; line-height: 1.12; }
   .sec--hero .hl-32 { font-size: 26px; }
-  .sec--hero .hl-36 { font-size: 27px; }
+  .sec--hero .hl-36 { font-size: 30px; }      /* keep the italic accent clearly larger */
   .sec--hero .hero-divider { display: none; }
-  .sec--hero .hero-badge { order: 3; position: relative; left: auto; top: auto; width: 149px; height: 179px; margin: 22px 0 4px; align-self: center; }
+  .sec--hero .hero-badge { order: 3; position: relative; left: auto; top: auto; width: 149px; height: 179px; margin: 24px 0 6px; align-self: flex-start; }
   .sec--hero .hero-sub { order: 4; width: auto; margin-top: 16px; }
-  .sec--hero .hero-sub .em-32 { font-size: 22px; line-height: 1.2; }
-  .sec--hero .hero-cta { order: 5; width: 100%; max-width: 360px; align-self: center; margin-top: 20px; }
+  .sec--hero .hero-sub .em-32 { font-size: 22px; line-height: 1.25; }
+  .sec--hero .hero-cta { order: 5; width: 100%; align-self: stretch; margin-top: 22px; }
 
   /* ===================== MAIN (360 + gallery) ===================== */
-  .sec--main { display: flex; flex-direction: column; gap: 14px; }
-  .sec--main .m-label { width: auto; height: auto; font-weight: 700; }
+  .sec--main { display: flex; flex-direction: column; gap: 16px; }
+  .sec--main .m-label { width: auto; height: auto; font-size: 16px; font-weight: 700; }
   .sec--main .m-card {
     position: relative !important; left: auto !important; top: auto !important;
     width: 100% !important; height: auto !important;
     aspect-ratio: 438 / 420; margin: 0;
   }
+  /* Scale the 360 badge up for the larger mobile card; never let the label clip. */
+  .sec--main .m-card .m-box { width: 138px !important; height: 116px !important; }
+  .sec--main .m-card .m-360 { width: 74px !important; height: 74px !important; }
+  .sec--main .m-card .m-360-label { width: auto !important; white-space: nowrap; font-size: 12px; }
   .sec--main .m-gallery {
     position: static !important; width: auto !important; height: auto !important;
     display: flex; flex-wrap: wrap; gap: 8px;
@@ -71,43 +84,51 @@
 
   /* ===================== STEPS ===================== */
   .sec--steps { display: flex; flex-direction: column; }
-  .sec--steps .steps__title { width: auto !important; height: auto !important; font-size: 24px; line-height: 1.2; margin-bottom: 20px; }
+  .sec--steps .steps__title { width: auto !important; margin-bottom: 22px; }
   .sec--steps .steps__arrow { display: none; }
-  .sec--steps .steps__col { width: auto !important; display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .sec--steps .steps__col { width: auto !important; display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
   .sec--steps .steps__circle { position: static !important; transform: none !important; margin: 0; flex: none; }
-  .sec--steps .steps__label { position: static !important; width: auto !important; text-align: left; }
-  .sec--steps .steps__cta { width: 100% !important; max-width: 360px; align-self: center; margin-top: 12px; }
+  .sec--steps .steps__label { position: static !important; width: auto !important; text-align: left; font-size: 16px; line-height: 1.3; }
+  .sec--steps .steps__cta { width: 100% !important; align-self: stretch; margin-top: 22px; }
 
   /* ===================== ICONS (advantages / equipment) ===================== */
-  .sec--icons { display: flex; flex-wrap: wrap; gap: 22px 10px; }
-  .sec--icons .head { flex: 0 0 100%; display: block; width: auto !important; height: auto !important; font-size: 26px; margin-top: 4px; }
+  /* Clean 2-column grid: uniform icon height + reserved label block so the two
+     columns of every row line up regardless of icon size or label line-count. */
+  .sec--icons { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; row-gap: 26px; align-items: start; }
+  .sec--icons .head { grid-column: 1 / -1; display: block; width: auto !important; margin: 4px 0 0; }
+  .sec--icons .head--eq { margin-top: 16px; }
   .sec--icons .col {
-    position: static !important; width: auto !important; flex: 0 0 calc(50% - 5px);
+    position: static !important; width: auto !important;
     display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-  .sec--icons .col .ic { margin: 0 auto 8px; }
-  .sec--icons .col .lbl { position: static !important; width: 100% !important; }
+  .sec--icons .col .ic { position: static; display: block; height: 64px !important; width: auto !important; max-width: 88px; object-fit: contain; margin: 0 auto 10px; }
+  .sec--icons .col .lbl { position: static !important; top: auto !important; width: 100% !important; min-height: 2.5em; line-height: 1.3; }
 
   /* ===================== MAPS ===================== */
   .sec--maps { display: flex; flex-direction: column; gap: 14px; }
-  .sec--maps .maps__title { width: auto !important; height: auto !important; }
+  .sec--maps .maps__title { width: auto !important; }
   .sec--maps .maps__img { width: 100% !important; height: auto !important; aspect-ratio: 445 / 259; }
   .sec--maps .maps__btn { width: 100% !important; height: 54px; padding-left: 0; justify-content: center; }
 
   /* ===================== RULES ===================== */
   .sec--rules { display: flex; flex-direction: column; gap: 16px; }
-  .sec--rules .rules__title { width: auto !important; height: auto !important; }
+  .sec--rules .rules__title { width: auto !important; }
   .sec--rules .rules__subtitle { width: auto !important; height: auto !important; margin-top: -6px; }
   .sec--rules .rules__list { position: static !important; width: auto !important; height: auto !important; }
-  .sec--rules .rules__times { position: static !important; width: auto !important; height: auto !important; gap: 40px; margin-top: 4px; }
+  .sec--rules .rules__times {
+    position: static !important; width: auto !important; height: auto !important;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; margin-top: 16px;
+  }
+  .sec--rules .rules__clock { width: 16px; height: 16px; }
+  .sec--rules .rules__in-line, .sec--rules .rules__out-line { display: flex; align-items: baseline; gap: 6px; }
 
   /* ===================== BOOKING ===================== */
   .sec--booking { padding: 0; }
-  .sec--booking .booking__title { width: auto !important; height: auto !important; padding: 30px 20px 0; }
+  .sec--booking .booking__title { width: auto !important; padding: 30px 20px 0; }
   .sec--booking .booking__band {
     position: static !important; left: auto !important; top: auto !important;
     width: auto !important; height: auto !important;
-    margin-top: 18px; padding: 30px 20px;
+    margin-top: 18px; padding: 32px 20px;
   }
   .sec--booking .booking__inner {
     position: static !important; left: auto !important; top: auto !important;
@@ -116,15 +137,26 @@
   }
   .sec--booking .booking__lead { position: static !important; width: auto !important; height: auto !important; }
   .sec--booking .booking__desc { position: static !important; width: auto !important; height: auto !important; }
-  .sec--booking .booking__btn  { position: static !important; width: 100% !important; max-width: 320px; height: 56px; }
+  .sec--booking .booking__btn  { position: static !important; width: 100% !important; max-width: 340px; height: 56px; }
 
   /* ===================== FOOTER ===================== */
   .sec--footer {
     display: flex; flex-direction: column; align-items: flex-start; gap: 22px;
-    padding: 30px 20px 96px;   /* bottom space so the fixed FAB doesn't cover it */
+    padding: 30px 20px 110px;   /* bottom space so the fixed FAB never covers it */
   }
   .sec--footer .footer__contacts,
   .sec--footer .footer__docs,
   .sec--footer .footer__logo { width: auto !important; height: auto !important; }
   .sec--footer .footer__logo { font-size: 52px; }
+
+  /* ===================== FLOATING CTA ===================== */
+  /* Full-width sticky bottom button — a clear mobile CTA instead of a corner
+     pill that overlaps content. Revealed on scroll (see .fab--peek) so it
+     doesn't duplicate the hero CTA at the top. */
+  .fab {
+    left: 14px; right: 14px; bottom: 14px;
+    width: auto; height: 54px; justify-content: center;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .fab--peek { opacity: 0; transform: translateY(150%); pointer-events: none; }
 }
