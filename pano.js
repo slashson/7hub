@@ -98,7 +98,7 @@
     function move(e) {
       if (!dragging) return;
       var p = pt(e);
-      yaw -= (p.clientX - lx) * perPx;
+      yaw += (p.clientX - lx) * perPx;   // inverted left/right per request (up/down unchanged)
       pitch = Math.max(-1.3, Math.min(1.3, pitch + (p.clientY - ly) * perPx));
       lx = p.clientX; ly = p.clientY;
       if (e.cancelable) e.preventDefault();
