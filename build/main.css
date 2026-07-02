@@ -2,10 +2,11 @@
    needs ~209px; UK/EN ~202px) — keeps "360°" from wrapping to a 2nd line. */
 .sec--main .m-label { left:0; top:0; width:220px; height:20px; color:var(--black); }
 
-/* Three 360° cards in a row (891 wide → 288 each, ~13.5px gaps). */
-.sec--main .m-card-a { left:0;     top:32px; width:288px; height:480px; }
-.sec--main .m-card-b { left:301.5px; top:32px; width:288px; height:480px; }
-.sec--main .m-card-c { left:603px;  top:32px; width:288px; height:480px; }
+/* 360° cards: two in the top row (438 each), the third full-width below
+   (891 = ~2× the width of the top ones). */
+.sec--main .m-card-a { left:0;   top:32px;  width:438px; height:270px; }
+.sec--main .m-card-b { left:452px; top:32px;  width:439px; height:270px; }
+.sec--main .m-card-c { left:0;   top:318px; width:891px; height:270px; }
 
 /* Interactive 360° viewer fills the card; rounded to match the card corners. */
 .sec--main .m-card { overflow:hidden; border-radius:12px; }
@@ -16,7 +17,7 @@
 .sec--main .m-card .m-360-label { position:absolute; left:34px; top:96px; width:93px; height:20px; color:var(--white); pointer-events:none; text-shadow:0 1px 3px rgba(0,0,0,.5); }
 
 /* Gallery */
-.sec--main .m-gallery { left:0; top:544px; width:890px; height:322px; }
+.sec--main .m-gallery { left:0; top:620px; width:890px; height:322px; }
 .sec--main .m-gallery .g { position:absolute; object-fit:cover; display:block; }
 .sec--main .m-gallery .g1 { left:0; top:0; width:438px; height:287px; transition:opacity .18s ease; }
 
@@ -34,4 +35,4 @@
 
 /* Bold caption — two <br>-separated lines. Width fits the longest line of any
    translation on one row (RU 2nd line ~335px) so the copy stays 2 lines, not 4. */
-.sec--main .m-caption { left:452px; top:796px; width:344px; height:40px; color:var(--black); }
+.sec--main .m-caption { left:452px; top:872px; width:344px; height:40px; color:var(--black); }

@@ -56,7 +56,7 @@ body { background: var(--cream); font-family: var(--sans); color: var(--black); 
 
 /* Section offsets on the 1024×3789 canvas (left, top, width, height) */
 .sec--hero    { left: 67px;  top: 0;     width: 893px;  height: 376px; }
-.sec--main    { left: 67px;  top: 412px; width: 891px;  height: 866px; }
+.sec--main    { left: 67px;  top: 412px; width: 891px;  height: 950px; }
 .sec--mission { left: 67px;  top: 1385px;width: 890px;  height: 146px; }
 .sec--steps   { left: 67px;  top: 1637px;width: 890px;  height: 331px; }
 .sec--icons   { left: 67px;  top: 2015px;width: 810px;  height: 490px; }
