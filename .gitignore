@@ -13,3 +13,6 @@ assets/ref/ref-*.png
 # raw 360 source (work in progress — not yet wired up)
 *.mp4
 assets/ref/m/
+
+# raw 360 source photos (embedded downscaled in pano-data.js)
+новые-фото/

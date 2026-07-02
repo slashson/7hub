@@ -124,10 +124,15 @@
 
   function start() {
     var canvases = [].slice.call(document.querySelectorAll('canvas.m-pano'));
-    if (!canvases.length || !window.PANO_SRC) return;
-    var img = new Image();
-    img.onload = function () { canvases.forEach(function (c) { initViewer(c, img); }); };
-    img.src = window.PANO_SRC;   // data URI → same-origin, no WebGL taint
+    var srcs = window.PANO_SRCS || (window.PANO_SRC ? [window.PANO_SRC] : []);
+    if (!canvases.length || !srcs.length) return;
+    // Each card shows its own panorama (data URI → same-origin, no WebGL taint).
+    canvases.forEach(function (c, i) {
+      var src = srcs[i] || srcs[srcs.length - 1];
+      var img = new Image();
+      img.onload = function () { initViewer(c, img); };
+      img.src = src;
+    });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
