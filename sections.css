@@ -93,23 +93,27 @@
 }
 
 /* ===================== main ===================== */
-/* width fits the longest translation on one line (RU "Полный обзор квартиры 360°"
-   needs ~209px; UK/EN ~202px) — keeps "360°" from wrapping to a 2nd line. */
-.sec--main .m-label { left:0; top:0; width:220px; height:20px; color:var(--black); }
+/* Section heading + drag instruction. */
+.sec--main .m-label { left:0; top:0; width:auto; height:auto; font-size:20px; font-weight:700; color:var(--black); }
+.sec--main .m-subtitle { left:0; top:30px; width:auto; height:auto; font-style:italic; color:var(--brown); }
 
 /* 360° cards: two in the top row (438 each), the third full-width below
-   (891 = ~2× the width of the top ones). */
-.sec--main .m-card-a { left:0;   top:32px;  width:438px; height:270px; }
-.sec--main .m-card-b { left:452px; top:32px;  width:439px; height:270px; }
-.sec--main .m-card-c { left:0;   top:318px; width:891px; height:270px; }
+   (891 = ~2× the width of the top ones). Pushed down to clear the subtitle. */
+.sec--main .m-card-a { left:0;   top:64px;  width:438px; height:254px; }
+.sec--main .m-card-b { left:452px; top:64px;  width:439px; height:254px; }
+.sec--main .m-card-c { left:0;   top:334px; width:891px; height:254px; }
 
-/* Interactive 360° viewer fills the card; rounded to match the card corners. */
-.sec--main .m-card { overflow:hidden; border-radius:12px; }
-.sec--main .m-card .m-pano { position:absolute; left:0; top:0; width:100%; height:100%; display:block; background:#000; touch-action:pan-y; }
-/* Badge overlay is a hint only — never blocks dragging the panorama. */
-.sec--main .m-card .m-box { position:absolute; left:22px; top:26px; width:118px; height:104px; background:transparent; border:1px solid var(--white); border-radius:12px; pointer-events:none; }
-.sec--main .m-card .m-360 { position:absolute; left:46px; top:35px; width:66px; height:66px; object-fit:cover; display:block; pointer-events:none; filter:invert(1); }
-.sec--main .m-card .m-360-label { position:absolute; left:34px; top:96px; width:93px; height:20px; color:var(--white); pointer-events:none; text-shadow:0 1px 3px rgba(0,0,0,.5); }
+/* Interactive 360° viewer fills the card. */
+.sec--main .m-card { overflow:hidden; border-radius:14px; box-shadow:0 4px 16px rgba(86,73,73,.14); transition:box-shadow .18s ease, transform .18s ease; }
+.sec--main .m-card:hover { box-shadow:0 10px 26px rgba(86,73,73,.24); transform:translateY(-2px); }
+.sec--main .m-card .m-pano { position:absolute; left:0; top:0; width:100%; height:100%; display:block; background:#000; cursor:grab; touch-action:pan-y; }
+/* bottom gradient so the room name stays legible over any (moving) photo */
+.sec--main .m-card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:48%; z-index:1; pointer-events:none; background:linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,0)); }
+/* overlays (hints only — never block dragging), all inset 12px + symmetric */
+.sec--main .m-card .pano-badge { position:absolute; left:12px; top:12px; z-index:2; padding:5px 11px; border-radius:999px; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff; font:700 12px/1 var(--sans); letter-spacing:.03em; pointer-events:none; }
+.sec--main .m-card .pano-room { position:absolute; left:12px; bottom:12px; z-index:2; max-width:calc(100% - 128px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#fff; font:700 19px/1.1 var(--sans); text-shadow:0 1px 6px rgba(0,0,0,.75); pointer-events:none; }
+.sec--main .m-card .pano-hint { position:absolute; right:12px; bottom:12px; z-index:2; display:inline-flex; align-items:center; padding:5px 10px; border-radius:999px; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff; font:600 12px/1 var(--sans); white-space:nowrap; pointer-events:none; transition:opacity .4s ease; }
+.sec--main .m-card.pano-touched .pano-hint { opacity:0; }
 
 /* Gallery */
 .sec--main .m-gallery { left:0; top:620px; width:890px; height:322px; }

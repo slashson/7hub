@@ -87,9 +87,11 @@
     }
 
     var dragging = false, lx = 0, ly = 0, perPx = 0.0025;
+    var card = canvas.closest ? canvas.closest('.m-card') : null;
     function pt(e) { return e.touches && e.touches[0] ? e.touches[0] : e; }
     function down(e) {
       dragging = true; auto = false; clearTimeout(resumeT);
+      if (card) card.classList.add('pano-touched');   // fade the "drag" hint
       var p = pt(e); lx = p.clientX; ly = p.clientY;
       var r = canvas.getBoundingClientRect();
       perPx = fov / r.height;              // rad per on-screen px (scale-correct)
@@ -120,6 +122,7 @@
     resize();
     window.addEventListener('resize', resize);
     requestAnimationFrame(frame);
+    if (card) setTimeout(function () { card.classList.add('pano-touched'); }, 7000); // auto-fade hint
   }
 
   function start() {

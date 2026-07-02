@@ -70,10 +70,8 @@
     width: 100% !important; height: auto !important;
     aspect-ratio: 438 / 420; margin: 0;
   }
-  /* Scale the 360 badge up for the larger mobile card; never let the label clip. */
-  .sec--main .m-card .m-box { width: 138px !important; height: 116px !important; }
-  .sec--main .m-card .m-360 { width: 74px !important; height: 74px !important; }
-  .sec--main .m-card .m-360-label { width: auto !important; white-space: nowrap; font-size: 12px; }
+  .sec--main .m-subtitle { width: auto; height: auto; }
+  .sec--main .m-card .pano-room { font-size: 17px; }
   .sec--main .m-gallery {
     position: static !important; width: auto !important; height: auto !important;
     display: flex; flex-wrap: wrap; gap: 8px;

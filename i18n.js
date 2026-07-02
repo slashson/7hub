@@ -25,7 +25,11 @@
 
     // ---- Main / gallery ----
     { s: '.m-label', uk: 'Повний огляд квартири 360°', ru: 'Полный обзор квартиры 360°', en: 'Full 360° apartment tour' },
-    { s: '.m-360-label', uk: 'Відкрити 360° тур', ru: 'Открыть 360° тур', en: 'Open 360° tour' },
+    { s: '.m-subtitle', uk: 'Потягніть, щоб роздивитися кожну кімнату', ru: 'Потяните, чтобы осмотреть каждую комнату', en: 'Drag to look around each room' },
+    { s: '.pano-hint', uk: '↔ Потягніть', ru: '↔ Потяните', en: '↔ Drag' },
+    { s: '.m-card-a .pano-room', uk: 'Спальня', ru: 'Спальня', en: 'Bedroom' },
+    { s: '.m-card-b .pano-room', uk: 'Санвузол', ru: 'Санузел', en: 'Bathroom' },
+    { s: '.m-card-c .pano-room', uk: 'Вітальня', ru: 'Гостиная', en: 'Living room' },
     // NB: .m-gallery-label is driven by gallery.js (the caption follows the
     // open photo), so it is intentionally NOT keyed here.
     { s: '.m-caption', h: true,
