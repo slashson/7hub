@@ -23,6 +23,8 @@
   margin-top: 24px;
   line-height: 27px;
   text-decoration: underline;
+  white-space: nowrap;   /* keep each doc link on one line (the <br> still splits the two);
+                            there's ~139px clearance to the logo, so no overlap */
 }
 .sec--footer .footer__logo {
   left: 445px;

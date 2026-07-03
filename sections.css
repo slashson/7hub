@@ -121,12 +121,13 @@ html.pano-fs-lock, body.pano-fs-lock { overflow:hidden !important; }
 .sec--main .m-gallery .g-thumb { cursor:pointer; transition:filter .15s ease, opacity .15s ease, box-shadow .15s ease; }
 .sec--main .m-gallery .g-thumb:hover { filter:brightness(1.07); opacity:.9; }
 .sec--main .m-gallery .g-thumb:focus-visible { outline:none; box-shadow:0 0 0 2px var(--black); }
-/* 5 thumbnails: 3 across the top, 2 centred below (was 6 in a 3×2 grid). */
+/* 6 thumbnails in a 3×2 grid. */
 .sec--main .m-gallery .g2 { left:452.35px; top:0;   width:141px; height:89px; }
 .sec--main .m-gallery .g3 { left:600.35px; top:0;   width:141px; height:89px; }
 .sec--main .m-gallery .g4 { left:749.35px; top:0;   width:141px; height:89px; }
-.sec--main .m-gallery .g5 { left:526.85px; top:98px; width:141px; height:89px; }
-.sec--main .m-gallery .g6 { left:674.85px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .g5 { left:452.35px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .g6 { left:600.35px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .g7 { left:749.35px; top:98px; width:141px; height:89px; }
 .sec--main .m-gallery .m-gallery-label { position:absolute; left:0; top:302px; width:auto; height:20px; white-space:nowrap; color:var(--black); }
 
 /* Bold caption — two <br>-separated lines. Width fits the longest line of any
@@ -482,6 +483,8 @@ html.pano-fs-lock, body.pano-fs-lock { overflow:hidden !important; }
   margin-top: 24px;
   line-height: 27px;
   text-decoration: underline;
+  white-space: nowrap;   /* keep each doc link on one line (the <br> still splits the two);
+                            there's ~139px clearance to the logo, so no overlap */
 }
 .sec--footer .footer__logo {
   left: 445px;
