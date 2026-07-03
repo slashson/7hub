@@ -115,7 +115,7 @@
   /* ===================== MAPS ===================== */
   .sec--maps { display: flex; flex-direction: column; gap: 14px; }
   .sec--maps .maps__title { width: auto !important; }
-  .sec--maps .maps__img { width: 100% !important; height: auto !important; aspect-ratio: 445 / 259; }
+  .sec--maps .maps__map { position: relative !important; width: 100% !important; height: auto !important; aspect-ratio: 445 / 259; }
   .sec--maps .maps__btn { width: 100% !important; height: 54px; padding-left: 0; justify-content: center; }
 
   /* ===================== RULES ===================== */

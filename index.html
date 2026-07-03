@@ -29,7 +29,7 @@
           <span class="hl hl-32">Мережа квартир</span>
           <span class="hl hl-32">одного стандарту</span>
           <span class="hl em-serif hl-36">приміщень</span>
-          <span class="hl em-serif hl-36">за одною адресою.</span>
+          <span class="hl em-serif hl-36">за однією адресою.</span>
         </div>
 
         <div class="hero-lang ty-lang">
@@ -53,7 +53,7 @@
         <div class="hero-badge">
           <img class="badge-bg" src="assets/icons/price-badge.svg" alt="">
           <div class="badge-week ty-week">тиждень</div>
-          <div class="badge-price ty-price">4000</div>
+          <div class="badge-price ty-price">6500</div>
           <div class="badge-uah ty-body">грн</div>
           <img class="badge-vector" src="assets/icons/price-vector.svg" alt="">
           <div class="badge-incl ty-body">Все включено</div>
@@ -65,9 +65,9 @@
         <span class="m-subtitle ty-body">Потягніть, щоб роздивитися кожну кімнату</span>
 
         <div class="m-card m-card-a">
-          <canvas class="m-pano" aria-label="360° панорама: спальня"></canvas>
+          <canvas class="m-pano" aria-label="360° панорама: вітальня"></canvas>
           <span class="pano-badge">360°</span>
-          <span class="pano-room">Спальня</span>
+          <span class="pano-room">Вітальня</span>
           <span class="pano-hint">↔ Потягніть</span>
         </div>
 
@@ -76,13 +76,6 @@
           <span class="pano-badge">360°</span>
           <span class="pano-room">Санвузол</span>
           <span class="pano-hint">↔ Потягніть</span>
-        </div>
-
-        <div class="m-card m-card-c">
-          <canvas class="m-pano" aria-label="360° панорама: вітальня"></canvas>
-          <span class="pano-badge">360°</span>
-          <span class="pano-room">Вітальня</span>
-          <span class="pano-hint">↔ Потягніть, щоб озирнутись</span>
         </div>
 
         <div class="m-gallery">
@@ -188,8 +181,10 @@
 
       <section class="sec sec--maps">
         <h2 class="ty-h2 maps__title">Розташування</h2>
-        <img class="maps__img" src="assets/img/maps-79fd63.png" alt="Карта розташування">
-        <a class="maps__btn ty-btn" href="https://maps.google.com">Відкрити у Google Maps</a>
+        <a class="maps__map" href="https://www.google.com/maps/search/?api=1&amp;query=вул.+Скорика,+9,+Дніпро" target="_blank" rel="noopener" aria-label="Відкрити вул. Скорика, 9, Дніпро у Google Maps">
+          <iframe class="maps__frame" src="https://maps.google.com/maps?q=вул.+Скорика,+9,+Дніпро&amp;z=16&amp;hl=uk&amp;output=embed" title="Карта: вул. Скорика, 9, Дніпро" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </a>
+        <a class="maps__btn ty-btn" href="https://www.google.com/maps/search/?api=1&amp;query=вул.+Скорика,+9,+Дніпро" target="_blank" rel="noopener">Відкрити у Google Maps</a>
       </section>
 
       <section class="sec sec--rules">
@@ -256,7 +251,7 @@
     // Scale the fixed 1024px canvas to fit the viewport, keeping the
     // Figma layout pixel-faithful at every width.
     (function () {
-      var CW = 1024, CH = 3789, MOBILE = 768;
+      var CW = 1024, CH = 3889, MOBILE = 768;
       var stage = document.getElementById('stage');
       var canvas = document.getElementById('canvas');
       function fit() {

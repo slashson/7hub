@@ -25,7 +25,7 @@ p, h1, h2, h3, figure { margin: 0; }
   --script: 'Playball', cursive;
 
   --canvas-w: 1024px;
-  --canvas-h: 3789px;
+  --canvas-h: 3889px;   /* +100 vs the original 3789: taller stacked hero */
 }
 
 /* ---- Page shell & responsive scaling ----
@@ -54,16 +54,18 @@ body { background: var(--cream); font-family: var(--sans); color: var(--black); 
 .sec { position: absolute; }
 .sec > * { position: absolute; }
 
-/* Section offsets on the 1024×3789 canvas (left, top, width, height) */
-.sec--hero    { left: 67px;  top: 0;     width: 893px;  height: 376px; }
-.sec--main    { left: 67px;  top: 412px; width: 891px;  height: 950px; }
-.sec--mission { left: 67px;  top: 1385px;width: 890px;  height: 146px; }
-.sec--steps   { left: 67px;  top: 1637px;width: 890px;  height: 331px; }
-.sec--icons   { left: 67px;  top: 2015px;width: 810px;  height: 490px; }
-.sec--maps    { left: 67px;  top: 2572px;width: 445px;  height: 461px; }
-.sec--rules   { left: 571px; top: 2572px;width: 347px;  height: 459px; }
-.sec--booking { left: 0;     top: 3102px;width: 1024px; height: 420px; }
-.sec--footer  { left: 67px;  top: 3591px;width: 886px;  height: 147px; }
+/* Section offsets on the 1024×3889 canvas (left, top, width, height).
+   Everything below the hero is shifted +100px vs the original to make room for
+   the taller stacked hero. */
+.sec--hero    { left: 67px;  top: 0;     width: 893px;  height: 500px; }
+.sec--main    { left: 67px;  top: 512px; width: 891px;  height: 900px; }
+.sec--mission { left: 67px;  top: 1485px;width: 890px;  height: 146px; }
+.sec--steps   { left: 67px;  top: 1737px;width: 890px;  height: 331px; }
+.sec--icons   { left: 67px;  top: 2115px;width: 810px;  height: 490px; }
+.sec--maps    { left: 67px;  top: 2672px;width: 445px;  height: 461px; }
+.sec--rules   { left: 571px; top: 2672px;width: 347px;  height: 459px; }
+.sec--booking { left: 0;     top: 3202px;width: 1024px; height: 420px; }
+.sec--footer  { left: 67px;  top: 3691px;width: 886px;  height: 147px; }
 
 /* ============================================================
    Typography utilities — one class per Figma text style.

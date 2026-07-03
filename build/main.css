@@ -2,11 +2,9 @@
 .sec--main .m-label { left:0; top:0; width:auto; height:auto; font-size:20px; font-weight:700; color:var(--black); }
 .sec--main .m-subtitle { left:0; top:30px; width:auto; height:auto; font-style:italic; color:var(--brown); }
 
-/* 360° cards: two in the top row (438 each), the third full-width below
-   (891 = ~2× the width of the top ones). Pushed down to clear the subtitle. */
-.sec--main .m-card-a { left:0;   top:64px;  width:438px; height:254px; }
-.sec--main .m-card-b { left:452px; top:64px;  width:439px; height:254px; }
-.sec--main .m-card-c { left:0;   top:334px; width:891px; height:254px; }
+/* Two 360° cards side by side. */
+.sec--main .m-card-a { left:0;   top:64px; width:438px; height:420px; }
+.sec--main .m-card-b { left:452px; top:64px; width:439px; height:420px; }
 
 /* Interactive 360° viewer fills the card. */
 .sec--main .m-card { overflow:hidden; border-radius:14px; box-shadow:0 4px 16px rgba(86,73,73,.14); transition:box-shadow .18s ease, transform .18s ease; }
@@ -21,7 +19,7 @@
 .sec--main .m-card.pano-touched .pano-hint { opacity:0; }
 
 /* Gallery */
-.sec--main .m-gallery { left:0; top:620px; width:890px; height:322px; }
+.sec--main .m-gallery { left:0; top:516px; width:890px; height:322px; }
 .sec--main .m-gallery .g { position:absolute; object-fit:cover; display:block; }
 .sec--main .m-gallery .g1 { left:0; top:0; width:438px; height:287px; transition:opacity .18s ease; }
 
@@ -39,4 +37,4 @@
 
 /* Bold caption — two <br>-separated lines. Width fits the longest line of any
    translation on one row (RU 2nd line ~335px) so the copy stays 2 lines, not 4. */
-.sec--main .m-caption { left:452px; top:872px; width:344px; height:40px; color:var(--black); }
+.sec--main .m-caption { left:452px; top:768px; width:344px; height:40px; color:var(--black); }

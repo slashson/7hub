@@ -8,7 +8,7 @@
   var ENTRIES = [
     // ---- Hero ----
     { s: '.sec--hero .hero-head', h: true,
-      uk: '<span class="hl hl-32">Мережа квартир</span> <span class="hl hl-32">одного стандарту</span> <span class="hl em-serif hl-36">приміщень</span> <span class="hl em-serif hl-36">за одною адресою.</span>',
+      uk: '<span class="hl hl-32">Мережа квартир</span> <span class="hl hl-32">одного стандарту</span> <span class="hl em-serif hl-36">приміщень</span> <span class="hl em-serif hl-36">за однією адресою.</span>',
       ru: '<span class="hl hl-32">Сеть квартир</span> <span class="hl hl-32">одного стандарта</span> <span class="hl em-serif hl-36">помещений</span> <span class="hl em-serif hl-36">по одному адресу.</span>',
       en: '<span class="hl hl-32">A network of flats</span> <span class="hl hl-32">of one standard —</span> <span class="hl em-serif hl-36">same rooms,</span> <span class="hl em-serif hl-36">one address.</span>' },
     { s: '.badge-week', uk: 'тиждень', ru: 'неделя', en: 'week' },
@@ -27,9 +27,8 @@
     { s: '.m-label', uk: 'Повний огляд квартири 360°', ru: 'Полный обзор квартиры 360°', en: 'Full 360° apartment tour' },
     { s: '.m-subtitle', uk: 'Потягніть, щоб роздивитися кожну кімнату', ru: 'Потяните, чтобы осмотреть каждую комнату', en: 'Drag to look around each room' },
     { s: '.pano-hint', uk: '↔ Потягніть', ru: '↔ Потяните', en: '↔ Drag' },
-    { s: '.m-card-a .pano-room', uk: 'Спальня', ru: 'Спальня', en: 'Bedroom' },
+    { s: '.m-card-a .pano-room', uk: 'Вітальня', ru: 'Гостиная', en: 'Living room' },
     { s: '.m-card-b .pano-room', uk: 'Санвузол', ru: 'Санузел', en: 'Bathroom' },
-    { s: '.m-card-c .pano-room', uk: 'Вітальня', ru: 'Гостиная', en: 'Living room' },
     // NB: .m-gallery-label is driven by gallery.js (the caption follows the
     // open photo), so it is intentionally NOT keyed here.
     { s: '.m-caption', h: true,
