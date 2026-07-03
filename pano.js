@@ -119,6 +119,50 @@
     canvas.addEventListener('touchmove', move, { passive: false });
     canvas.addEventListener('touchend', up);
 
+    // ---- Fullscreen toggle (native where supported; CSS overlay fallback for iOS) ----
+    var fsBtn = card ? card.querySelector('.pano-fs') : null;
+    if (fsBtn && card) {
+      var canNative = !!(card.requestFullscreen || card.webkitRequestFullscreen);
+      var nudge = function () { setTimeout(resize, 30); setTimeout(resize, 260); };
+      var inNative = function () {
+        return (document.fullscreenElement || document.webkitFullscreenElement) === card;
+      };
+      var isOpen = function () { return inNative() || card.classList.contains('is-fullscreen'); };
+      var syncBtn = function () {
+        var open = isOpen();
+        fsBtn.classList.toggle('is-open', open);
+        fsBtn.setAttribute('aria-label', open ? 'Згорнути' : 'Розгорнути на весь екран');
+      };
+      var onEsc = function (e) { if (e.key === 'Escape') exit(); };
+      function enter() {
+        if (canNative) {
+          (card.requestFullscreen || card.webkitRequestFullscreen).call(card);
+        } else {
+          card.classList.add('is-fullscreen');
+          document.documentElement.classList.add('pano-fs-lock');
+          document.addEventListener('keydown', onEsc);
+          syncBtn(); nudge();
+        }
+      }
+      function exit() {
+        if (inNative()) {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        } else {
+          card.classList.remove('is-fullscreen');
+          document.documentElement.classList.remove('pano-fs-lock');
+          document.removeEventListener('keydown', onEsc);
+          syncBtn(); nudge();
+        }
+      }
+      fsBtn.addEventListener('click', function (e) {
+        e.stopPropagation(); e.preventDefault();
+        if (isOpen()) exit(); else enter();
+      });
+      var onFsChange = function () { syncBtn(); nudge(); };
+      document.addEventListener('fullscreenchange', onFsChange);
+      document.addEventListener('webkitfullscreenchange', onFsChange);
+    }
+
     resize();
     window.addEventListener('resize', resize);
     requestAnimationFrame(frame);

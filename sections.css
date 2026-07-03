@@ -75,8 +75,42 @@
 /* overlays (hints only — never block dragging), all inset 12px + symmetric */
 .sec--main .m-card .pano-badge { position:absolute; left:12px; top:12px; z-index:2; padding:5px 11px; border-radius:999px; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff; font:700 12px/1 var(--sans); letter-spacing:.03em; pointer-events:none; }
 .sec--main .m-card .pano-room { position:absolute; left:12px; bottom:12px; z-index:2; max-width:calc(100% - 128px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#fff; font:700 19px/1.1 var(--sans); text-shadow:0 1px 6px rgba(0,0,0,.75); pointer-events:none; }
-.sec--main .m-card .pano-hint { position:absolute; right:12px; bottom:12px; z-index:2; display:inline-flex; align-items:center; padding:5px 10px; border-radius:999px; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff; font:600 12px/1 var(--sans); white-space:nowrap; pointer-events:none; transition:opacity .4s ease; }
+.sec--main .m-card .pano-hint { position:absolute; right:12px; top:12px; z-index:2; display:inline-flex; align-items:center; padding:5px 10px; border-radius:999px; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff; font:600 12px/1 var(--sans); white-space:nowrap; pointer-events:none; transition:opacity .4s ease; }
 .sec--main .m-card.pano-touched .pano-hint { opacity:0; }
+
+/* Fullscreen toggle (bottom-right). Expand icon by default, collapse when open. */
+.sec--main .m-card .pano-fs {
+  position:absolute; right:12px; bottom:12px; z-index:3;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; padding:0; border:0; border-radius:10px;
+  background:rgba(0,0,0,.55); color:#fff; cursor:pointer;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  transition:background .15s ease, transform .15s ease;
+}
+.sec--main .m-card .pano-fs:hover  { background:rgba(0,0,0,.78); transform:translateY(-1px); }
+.sec--main .m-card .pano-fs:active { transform:translateY(0); }
+.sec--main .m-card .pano-fs:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+.sec--main .m-card .pano-fs .pano-fs-ico { width:18px; height:18px; display:block; }
+.sec--main .m-card .pano-fs .pano-fs-close { display:none; }
+.sec--main .m-card .pano-fs.is-open .pano-fs-open  { display:none; }
+.sec--main .m-card .pano-fs.is-open .pano-fs-close { display:block; }
+
+/* Expanded states.
+   Native fullscreen (desktop + Android) escapes the scaled .canvas transform. */
+.sec--main .m-card:fullscreen,
+.sec--main .m-card:-webkit-full-screen {
+  width:100%; height:100%; border-radius:0; transform:none; box-shadow:none;
+}
+.sec--main .m-card:fullscreen::after,
+.sec--main .m-card:-webkit-full-screen::after { height:32%; }
+/* CSS-overlay fallback (iOS, where element fullscreen is unsupported). On phones
+   the .canvas transform is already dropped, so position:fixed = viewport. */
+.sec--main .m-card.is-fullscreen {
+  position:fixed; inset:0; left:0; top:0; width:100vw; height:100vh;
+  margin:0; border-radius:0; transform:none; box-shadow:none; z-index:9999;
+}
+.sec--main .m-card.is-fullscreen::after { height:32%; }
+html.pano-fs-lock, body.pano-fs-lock { overflow:hidden !important; }
 
 /* Gallery */
 .sec--main .m-gallery { left:0; top:516px; width:890px; height:322px; }
@@ -87,12 +121,12 @@
 .sec--main .m-gallery .g-thumb { cursor:pointer; transition:filter .15s ease, opacity .15s ease, box-shadow .15s ease; }
 .sec--main .m-gallery .g-thumb:hover { filter:brightness(1.07); opacity:.9; }
 .sec--main .m-gallery .g-thumb:focus-visible { outline:none; box-shadow:0 0 0 2px var(--black); }
-.sec--main .m-gallery .g2 { left:452.35px; top:0; width:141px; height:89px; }
-.sec--main .m-gallery .g3 { left:452.35px; top:98px; width:141px; height:89px; }
-.sec--main .m-gallery .g4 { left:600.35px; top:0; width:142px; height:89px; }
-.sec--main .m-gallery .g5 { left:600.35px; top:98px; width:142px; height:89px; }
-.sec--main .m-gallery .g6 { left:749.35px; top:0; width:141px; height:89px; }
-.sec--main .m-gallery .g7 { left:749.35px; top:98px; width:141px; height:89px; }
+/* 5 thumbnails: 3 across the top, 2 centred below (was 6 in a 3×2 grid). */
+.sec--main .m-gallery .g2 { left:452.35px; top:0;   width:141px; height:89px; }
+.sec--main .m-gallery .g3 { left:600.35px; top:0;   width:141px; height:89px; }
+.sec--main .m-gallery .g4 { left:749.35px; top:0;   width:141px; height:89px; }
+.sec--main .m-gallery .g5 { left:526.85px; top:98px; width:141px; height:89px; }
+.sec--main .m-gallery .g6 { left:674.85px; top:98px; width:141px; height:89px; }
 .sec--main .m-gallery .m-gallery-label { position:absolute; left:0; top:302px; width:auto; height:20px; white-space:nowrap; color:var(--black); }
 
 /* Bold caption — two <br>-separated lines. Width fits the longest line of any

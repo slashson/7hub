@@ -52,7 +52,7 @@ Icons in `assets/icons/`:
 Images in `assets/img/`:
 - `seven-badge.png` 75×54 (the "7" badge)
 - `maps-79fd63.png` 445×259
-- `gallery-1-6db3fe.png` 438×287 · `gallery-2.png` 141×89 · `gallery-3.png` 141×89 · `gallery-4.png` 142×89 · `gallery-5.png` 142×89 · `gallery-6.png` 141×89 · `gallery-7-2086a7.png` 141×89
+- Gallery (6 photos, `object-fit:cover`): `room-kitchen.jpg` 1240×571 (big 438×287) · thumbs 141×89 → `room-stairs.jpg` · `room-bed.jpg` · `room-kitchen2.jpg` · `room-sofa.jpg` · `room-loft.jpg` (all ~420×560)
 - `tour-360-a-630e02.png` 438×480 · `tour-360-b-38cb5a.png` 439×480
 
 Raster images use `object-fit: cover` (they fill their box).
