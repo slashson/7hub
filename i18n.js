@@ -36,6 +36,40 @@
       ru: 'Все квартиры соответствуют фотографиям<br>и доступны для самостоятельного заселения.',
       en: 'All apartments match the photos<br>and are available for self check-in.' },
 
+    // ---- Advantages (5 cards) ----
+    { s: '.adv__title',    uk: 'Переваги проживання', ru: 'Преимущества проживания', en: 'Why you’ll love it' },
+    { s: '.adv__subtitle', uk: 'Справжнє житло, а не готельний номер', ru: 'Настоящее жильё, а не гостиничный номер', en: 'A real home, not a hotel room' },
+
+    { s: '.adv__card--1 .adv__name', uk: 'Справжні апартаменти', ru: 'Настоящие апартаменты', en: 'Real apartments' },
+    { s: '.adv__card--1 .adv__desc',
+      uk: 'Не готельний номер, а повноцінний простір для життя — з власною кухнею, санвузлом і всім необхідним.',
+      ru: 'Не гостиничный номер, а полноценное пространство для жизни с собственной кухней, санузлом и всем необходимым.',
+      en: 'Not a hotel room, but a full living space — with its own kitchen, bathroom and everything you need.' },
+
+    { s: '.adv__card--2 .adv__name', uk: 'Живіть як удома', ru: 'Живите как дома', en: 'Live like home' },
+    { s: '.adv__card--2 .adv__desc',
+      uk: 'Готуйте, періть, працюйте, відпочивайте та живіть у звичному ритмі — без обмежень готельного формату.',
+      ru: 'Готовьте, стирайте, работайте, отдыхайте и живите в привычном ритме без ограничений гостиничного формата.',
+      en: 'Cook, do laundry, work, relax and live at your own pace — with none of the limits of a hotel.' },
+
+    { s: '.adv__card--3 .adv__name', uk: 'Вища ймовірність заселення', ru: 'Выше вероятность заселения', en: 'Higher chance of a room' },
+    { s: '.adv__card--3 .adv__desc',
+      uk: 'Сім однакових студій працюють як єдиний простір. Якщо одна зайнята, часто знайдеться інша з таким самим рівнем комфорту.',
+      ru: 'Семь одинаковых студий работают как единое пространство. Если одна студия занята, часто найдётся другая с таким же уровнем комфорта.',
+      en: 'Seven identical studios work as one space. If one is taken, there’s often another with the same comfort.' },
+
+    { s: '.adv__card--4 .adv__name', uk: 'Усі деталі продумані', ru: 'Все детали продуманы', en: 'Every detail considered' },
+    { s: '.adv__card--4 .adv__desc',
+      uk: 'Ми постаралися передбачити всі дрібниці, щоб проживання було максимально комфортним з першого дня.',
+      ru: 'Мы постарались предусмотреть все мелочи, чтобы проживание было максимально комфортным с первого дня.',
+      en: 'We’ve tried to think of every little thing, so your stay is as comfortable as possible from day one.' },
+
+    { s: '.adv__card--5 .adv__name', uk: 'Місце для двох', ru: 'Место для двоих', en: 'Room for two' },
+    { s: '.adv__card--5 .adv__desc',
+      uk: 'Студія розрахована на комфортне проживання однієї людини, а за потреби другий гість може розміститися на зручному дивані.',
+      ru: 'Студия рассчитана на комфортное проживание одного человека, а при необходимости второй гость может разместиться на удобном диване.',
+      en: 'The studio is designed for one person to stay comfortably, and a second guest can settle on the sofa if needed.' },
+
     // ---- Mission ----
     { s: '.mission-text',
       uk: 'Ми створили сервіс для людей, яким потрібне житло на кілька тижнів без агентств, заставних зустрічей та довгих переписок.',
@@ -100,9 +134,9 @@
       ru: '<div class="em-bold footer__heading">Контакты</div><div class="footer__lines">+380 (63) 796 82 42<br>hello@kvartal.example<br>Телеграм @boris8242</div>',
       en: '<div class="em-bold footer__heading">Contacts</div><div class="footer__lines">+380 (63) 796 82 42<br>hello@kvartal.example<br>Telegram @boris8242</div>' },
     { s: '.footer__docs', h: true,
-      uk: '<div class="em-bold footer__heading">Документи</div><div class="footer__doc-lines"><a href="#">Договір оферти</a><br><a href="#">Політика конфіденційності</a></div>',
-      ru: '<div class="em-bold footer__heading">Документы</div><div class="footer__doc-lines"><a href="#">Договор оферты</a><br><a href="#">Политика конфиденциальности</a></div>',
-      en: '<div class="em-bold footer__heading">Documents</div><div class="footer__doc-lines"><a href="#">Offer agreement</a><br><a href="#">Privacy policy</a></div>' }
+      uk: '<div class="em-bold footer__heading">Документи</div><div class="footer__doc-lines"><a href="oferta.html">Договір оферти</a><br><a href="#">Політика конфіденційності</a></div>',
+      ru: '<div class="em-bold footer__heading">Документы</div><div class="footer__doc-lines"><a href="oferta.html">Договор оферты</a><br><a href="#">Политика конфиденциальности</a></div>',
+      en: '<div class="em-bold footer__heading">Documents</div><div class="footer__doc-lines"><a href="oferta.html">Offer agreement</a><br><a href="#">Privacy policy</a></div>' }
   ];
 
   var TITLES = {

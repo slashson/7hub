@@ -20,6 +20,7 @@
 
   /* ---- One consistent section-heading scale across the whole page ---- */
   .sec--steps .steps__title,
+  .sec--advantages .adv__title,
   .sec--icons .head,
   .sec--maps  .maps__title,
   .sec--rules .rules__title,
@@ -81,6 +82,17 @@
   .sec--main .m-gallery .m-gallery-label { position: static !important; order: 2; width: 100% !important; height: auto; }
   .sec--main .m-gallery .g-thumb { order: 3; width: calc((100% - 16px) / 3) !important; height: auto !important; aspect-ratio: 141 / 89; }
   .sec--main .m-caption { width: auto !important; height: auto !important; }
+
+  /* ===================== ADVANTAGES (5 cards) ===================== */
+  .sec--advantages { display: flex; flex-direction: column; gap: 14px; }
+  .sec--advantages .adv__title { width: auto !important; margin-bottom: 0; }
+  .sec--advantages .adv__subtitle { width: auto !important; height: auto !important; margin: -6px 0 6px; }
+  .sec--advantages .adv__card {
+    width: auto !important; height: auto !important;
+    padding: 20px 22px;
+  }
+  .sec--advantages .adv__card:hover { transform: none; }   /* no hover-lift on touch */
+  .sec--advantages .adv__ic { width: 52px; height: 52px; }
 
   /* ===================== MISSION ===================== */
   .sec--mission .mission-bubble { display: none; }

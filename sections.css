@@ -99,6 +99,36 @@
    translation on one row (RU 2nd line ~335px) so the copy stays 2 lines, not 4. */
 .sec--main .m-caption { left:452px; top:768px; width:344px; height:40px; color:var(--black); }
 
+/* ===================== advantages ===================== */
+/* Heading + subtitle */
+.sec--advantages .adv__title    { left: 0; top: 0;    width: 890px; height: 50px; color: var(--black); }
+.sec--advantages .adv__subtitle { left: 0; top: 52px; width: 890px; height: 22px; color: var(--brown); }
+
+/* Cards — a 3 + 2 grid of fixed 280×260 boxes (children flow inside each box) */
+.sec--advantages .adv__card {
+  width: 280px; height: 260px;
+  display: flex; flex-direction: column;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid rgba(124, 76, 42, .14);
+  border-radius: 20px;
+  box-shadow: 0 10px 26px rgba(86, 73, 73, .08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.sec--advantages .adv__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(86, 73, 73, .14);
+}
+.sec--advantages .adv__card--1 { left: 0;     top: 104px; }
+.sec--advantages .adv__card--2 { left: 305px; top: 104px; }
+.sec--advantages .adv__card--3 { left: 610px; top: 104px; }
+.sec--advantages .adv__card--4 { left: 152px; top: 388px; }
+.sec--advantages .adv__card--5 { left: 457px; top: 388px; }
+
+.sec--advantages .adv__ic   { width: 56px; height: 56px; margin-bottom: 14px; }
+.sec--advantages .adv__name { margin: 0 0 8px; font: 700 17px/22px var(--sans); color: var(--charcoal); }
+.sec--advantages .adv__desc { margin: 0; color: var(--black); }
+
 /* ===================== mission ===================== */
 .sec--mission .mission-bubble {
   left: 0;
