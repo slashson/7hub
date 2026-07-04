@@ -130,9 +130,9 @@
 
     // ---- Footer ----
     { s: '.footer__contacts', h: true,
-      uk: '<div class="em-bold footer__heading">Контакти</div><div class="footer__lines">+380 (63) 796 82 42<br>hello@kvartal.example<br>Телеграм @flat7bot</div>',
-      ru: '<div class="em-bold footer__heading">Контакты</div><div class="footer__lines">+380 (63) 796 82 42<br>hello@kvartal.example<br>Телеграм @flat7bot</div>',
-      en: '<div class="em-bold footer__heading">Contacts</div><div class="footer__lines">+380 (63) 796 82 42<br>hello@kvartal.example<br>Telegram @flat7bot</div>' },
+      uk: '<div class="em-bold footer__heading">Контакти</div><div class="footer__lines">+380 97 444 04 01<br>boris8242@gmail.com<br>Телеграм @flat7bot</div>',
+      ru: '<div class="em-bold footer__heading">Контакты</div><div class="footer__lines">+380 97 444 04 01<br>boris8242@gmail.com<br>Телеграм @flat7bot</div>',
+      en: '<div class="em-bold footer__heading">Contacts</div><div class="footer__lines">+380 97 444 04 01<br>boris8242@gmail.com<br>Telegram @flat7bot</div>' },
     { s: '.footer__docs', h: true,
       uk: '<div class="em-bold footer__heading">Документи</div><div class="footer__doc-lines"><a href="oferta-uk.html">Договір оферти</a><br><a href="policy-uk.html">Політика конфіденційності</a></div>',
       ru: '<div class="em-bold footer__heading">Документы</div><div class="footer__doc-lines"><a href="oferta-ru.html">Договор оферты</a><br><a href="policy-ru.html">Политика конфиденциальности</a></div>',
