@@ -140,9 +140,9 @@
   ];
 
   var TITLES = {
-    uk: 'smartstudios — Мережа квартир одного стандарту, Могилів',
-    ru: 'smartstudios — Сеть квартир одного стандарта, Могилёв',
-    en: 'smartstudios — A network of identical flats, Mogilev'
+    uk: 'smartstudios — Мережа квартир одного стандарту',
+    ru: 'smartstudios — Сеть квартир одного стандарта',
+    en: 'smartstudios — A network of identical flats'
   };
 
   function apply(lang) {
