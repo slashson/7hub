@@ -71,6 +71,16 @@
     width: 100% !important; height: auto !important;
     aspect-ratio: 438 / 420; margin: 0;
   }
+  /* Fullscreen overlay (iPhone has no element-fullscreen API, so this CSS
+     overlay is the ONLY way the 360° viewer expands). It must use !important
+     to beat the .m-card reset above — otherwise position:relative/width:100%/
+     height:auto win the cascade and tapping the button does nothing. */
+  .sec--main .m-card.is-fullscreen {
+    position: fixed !important; left: 0 !important; top: 0 !important;
+    width: 100vw !important; height: 100vh !important; height: 100dvh !important;
+    margin: 0 !important; aspect-ratio: auto !important;
+    border-radius: 0 !important; transform: none !important; z-index: 9999;
+  }
   .sec--main .m-subtitle { width: auto; height: auto; }
   .sec--main .m-card .pano-room { font-size: 17px; }
   .sec--main .m-gallery {
