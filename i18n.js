@@ -13,6 +13,7 @@
       en: '<span class="hl hl-32">A network of flats</span> <span class="hl hl-32">of one standard —</span> <span class="hl em-serif hl-36">same rooms,</span> <span class="hl em-serif hl-36">one address.</span>' },
     { s: '.badge-week', uk: 'тиждень', ru: 'неделя', en: 'week' },
     { s: '.badge-uah',  uk: 'грн',     ru: 'грн',    en: 'UAH'  },
+    { s: '.badge-days', uk: '3 доби',  ru: '3 суток', en: '3 nights' },
     { s: '.badge-incl', uk: 'Все включено', ru: 'Всё включено', en: 'All included' },
     { s: '.hero-sub', h: true,
       uk: '<span class="em-32">Простір для тимчасового проживання.</span><br>Без господарів. Без агенцій. Без комісій.',

@@ -48,14 +48,19 @@
 .sec--hero .lang-btn:hover    { color: var(--brown); opacity: .85; }
 .sec--hero .lang-btn.is-active { font-weight: 700; color: var(--brown); cursor: default; }
 
-/* price badge — top-right (unchanged desktop placement) */
-.sec--hero .hero-badge { position: absolute; left: auto; right: 144px; top: 0; width: 149px; height: 179px; }
-.sec--hero .badge-bg   { left: 0; top: 0; width: 149px; height: 179px; object-fit: cover; }
-.sec--hero .badge-week { left: 25px; top: 40px; width: 100px; height: 36px; color: var(--cream); }
-.sec--hero .badge-price{ left: 22px; top: 80px; width: 110px; height: 24px; color: var(--white); }
-.sec--hero .badge-uah  { left: 101px; top: 104px; width: 24px; height: 20px; color: var(--cream); }
-.sec--hero .badge-vector { left: 15px; top: 139px; width: 12px; height: 12px; object-fit: cover; }
-.sec--hero .badge-incl { left: 33px; top: 135px; width: 105px; height: 21px; color: var(--white); }
+/* price badge — top-right. Two price tiers ("тиждень 6300 грн" above the
+   hairline, "3 доби 3000" below), then the "Все включено" check line.
+   Geometry mirrors the Figma frame (149 x 218). */
+.sec--hero .hero-badge { position: absolute; left: auto; right: 144px; top: 0; width: 149px; height: 218px; }
+.sec--hero .badge-bg   { left: 0; top: 0; width: 149px; height: 218px; object-fit: cover; }
+.sec--hero .badge-week { left: 25px; top: 15px; width: 100px; height: 36px; color: var(--cream); }
+.sec--hero .badge-price{ left: 22px; top: 55px; width: 110px; height: 24px; color: var(--white); }
+.sec--hero .badge-uah  { left: 101px; top: 79px; width: 24px; height: 20px; color: var(--cream); }
+.sec--hero .badge-line { left: 12px; top: 106px; width: 125px; height: 1px; background: #523521; }
+.sec--hero .badge-days { left: 26px; top: 105px; width: 90px; height: 20px; color: var(--cream); }
+.sec--hero .badge-price2 { left: 25px; top: 127px; width: 110px; height: 36px; line-height: 36px; color: var(--cream); }
+.sec--hero .badge-vector { left: 15px; top: 178px; width: 12px; height: 12px; object-fit: cover; }
+.sec--hero .badge-incl { left: 33px; top: 174px; width: 105px; height: 21px; color: var(--white); }
 
 /* ===================== main ===================== */
 /* Section heading + drag instruction. */

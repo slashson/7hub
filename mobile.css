@@ -35,7 +35,7 @@
     padding-top: 22px;
   }
   .sec--hero .hero-lang {
-    position: absolute; left: auto; top: 156px; right: 18px;   /* below the price badge */
+    position: absolute; left: auto; top: 182px; right: 18px;   /* below the price badge (218 x 0.8 = 174 tall) */
     width: auto; height: auto; display: flex; gap: 6px;
   }
   .sec--hero .lang-btn { display: inline-flex; align-items: center; line-height: 1; padding: 13px 7px; }
@@ -56,7 +56,7 @@
      scaled to fit beside the heading. */
   .sec--hero .hero-badge {
     position: absolute; top: 0; right: 14px; left: auto; bottom: auto;   /* touches the very top */
-    width: 149px; height: 179px; margin: 0;
+    width: 149px; height: 218px; margin: 0;
     transform: scale(0.8); transform-origin: top right;
   }
   .sec--hero .hero-sub { order: 4; width: auto; height: auto !important; margin-top: 24px; }
